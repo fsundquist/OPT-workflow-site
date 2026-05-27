@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPT Workflow – Startsida</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --border:    #30363d;
+      --text:      #e6edf3;
+      --muted:     #8b949e;
+      --accent:    #388bfd;
+      --accent-hv: #58a6ff;
+      --danger:    #f85149;
+      --radius:    8px;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 1rem;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 480px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+    }
+
+    .card h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p.subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Login form ── */
+    #login-section label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    #login-section input[type="password"] {
+      width: 100%;
+      padding: 0.55rem 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    #login-section input[type="password"]:focus {
+      border-color: var(--accent);
+    }
+
+    #login-section button {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 0.6rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    #login-section button:hover { background: var(--accent-hv); }
+
+    #error-msg {
+      display: none;
+      margin-top: 0.75rem;
+      color: var(--danger);
+      font-size: 0.85rem;
+    }
+
+    /* ── App links ── */
+    #app-section { display: none; }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .link-btn:hover {
+      border-color: var(--accent);
+      background: #1c2230;
+    }
+
+    .link-btn .icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .link-btn .desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 0.1rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1>OPT Workflow</h1>
+  <p class="subtitle">Inloggning krävs för att komma åt verktygen.</p>
+
+  <!-- ================================================================
+       ÅTKOMSTSKYDD – OBS: Detta är ett enkelt klientbaserat skydd med
+       SHA-256-hash och är INTE riktig säkerhet. Det hindrar inte en
+       tekniskt kunnig användare från att komma åt filerna direkt.
+       Publicera aldrig patientdata eller känsliga filer via GitHub Pages.
+       ================================================================ -->
+
+  <!-- Loginsektion -->
+  <div id="login-section">
+    <label for="code-input">Åtkomstkod</label>
+    <input type="password" id="code-input" placeholder="Ange åtkomstkod" autocomplete="off" />
+    <button id="login-btn">Logga in</button>
+    <p id="error-msg">Fel åtkomstkod. Försök igen.</p>
+  </div>
+
+  <!-- Appsektion (visas efter inloggning) -->
+  <div id="app-section">
+    <a class="link-btn" href="generated/flowchart.html" target="_blank" rel="noopener">
+      <span class="icon">🔀</span>
+      <span>
+        <strong>Öppna interaktivt flödesschema</strong>
+        <br />
+        <span class="desc">generated/flowchart.html</span>
+      </span>
+    </a>
+    <a class="link-btn" href="generated/algorithm_decision_tool.html" target="_blank" rel="noopener">
+      <span class="icon">🩺</span>
+      <span>
+        <strong>Öppna beslutstöd</strong>
+        <br />
+        <span class="desc">generated/algorithm_decision_tool.html</span>
+      </span>
+    </a>
+  </div>
+
+  <footer>
+    OPT Workflow &nbsp;·&nbsp; Internt verktyg &nbsp;·&nbsp;
+    Publicera inte patientdata via GitHub Pages.
+  </footer>
+</div>
+
+<script>
+  // ================================================================
+  // SHA-256-hash av åtkomstkoden – byt ut mot din egen hash.
+  // Skapa hash: python -c "import hashlib; print(hashlib.sha256(b'DIN-KOD-HÄR').hexdigest())"
+  // OBS: Detta är ett enkelt åtkomstskydd och INTE riktig säkerhet.
+  // ================================================================
+  const CODE_HASH = "REPLACE_WITH_SHA256_HASH";
+
+  const SESSION_KEY = "opt_workflow_auth";
+
+  const loginSection = document.getElementById("login-section");
+  const appSection   = document.getElementById("app-section");
+  const codeInput    = document.getElementById("code-input");
+  const loginBtn     = document.getElementById("login-btn");
+  const errorMsg     = document.getElementById("error-msg");
+
+  async function sha256hex(text) {
+    const encoded = new TextEncoder().encode(text);
+    const hashBuf = await crypto.subtle.digest("SHA-256", encoded);
+    return Array.from(new Uint8Array(hashBuf))
+      .map(b => b.toString(16).padStart(2, "0"))
+      .join("");
+  }
+
+  function showApp() {
+    loginSection.style.display = "none";
+    appSection.style.display   = "block";
+  }
+
+  // Kontrollera om sessionen redan är autentiserad
+  if (sessionStorage.getItem(SESSION_KEY) === "1") {
+    showApp();
+  }
+
+  async function tryLogin() {
+    const hash = await sha256hex(codeInput.value);
+    if (hash === CODE_HASH) {
+      sessionStorage.setItem(SESSION_KEY, "1");
+      errorMsg.style.display = "none";
+      showApp();
+    } else {
+      errorMsg.style.display = "block";
+      codeInput.value = "";
+      codeInput.focus();
+    }
+  }
+
+  loginBtn.addEventListener("click", tryLogin);
+  codeInput.addEventListener("keydown", e => {
+    if (e.key === "Enter") tryLogin();
+  });
+</script>
+</body>
+</html>

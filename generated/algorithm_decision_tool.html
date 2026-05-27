@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPT Standard Algoritm 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .control-group label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        .control-group input,
+        .control-group select {
+            padding: 10px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        .control-group input:focus,
+        .control-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .results-section {
+            margin-top: 30px;
+        }
+        .result-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .result-card.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .result-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .result-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .result-card .label {
+            font-weight: 600;
+            color: #333;
+        }
+        .recommendation {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .recommendation h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .recommendation .value {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #764ba2;
+        }
+        .no-match {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #856404;
+            padding: 15px;
+            border-radius: 6px;
+            display: none;
+        }
+        .no-match.show {
+            display: block;
+        }
+        .calculation {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .calculation.show {
+            display: block;
+        }
+        .calculation .label {
+            font-weight: 600;
+            color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>OPT Standard Algoritm 2026</h1>
+            <p>Interaktiv beslutsverktyg för prostatacancer screening</p>
+        </div>
+        
+        <div class="content">
+            <div class="controls">
+                <div class="control-group">
+                    <label for="psa">PSA-värde (ng/mL):</label>
+                    <input type="number" id="psa" placeholder="t.ex. 5.5" step="0.1" min="0">
+                </div>
+                <div class="control-group">
+                    <label for="prostate">Prostatastorlek (mL):</label>
+                    <input type="number" id="prostate" placeholder="t.ex. 30" step="1" min="0">
+                </div>
+                <div class="control-group">
+                    <label for="pirads">PI-RADS (senast MR):</label>
+                    <select id="pirads">
+                        <option value="">-- Välj PI-RADS --</option>
+                        <option value="PI-RADS = 1-2">PI-RADS 1-2</option>
+                        <option value="PI-RADS = 3">PI-RADS 3</option>
+                        <option value="PI-RADS = 4-5">PI-RADS 4-5</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="pirads_prev">PI-RADS (tidigare MR):</label>
+                    <select id="pirads_prev">
+                        <option value="">-- Välj PI-RADS --</option>
+                        <option value="PI-RADS = 1-2">PI-RADS 1-2</option>
+                        <option value="PI-RADS = 3">PI-RADS 3</option>
+                        <option value="PI-RADS = 4-5">PI-RADS 4-5</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="biopsy_prev">Tidigare biopsi?</label>
+                    <select id="biopsy_prev">
+                        <option value="">-- Välj --</option>
+                        <option value="J">Ja</option>
+                        <option value="N">Nej</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="results-section">
+                <div id="matched-results"></div>
+                <div id="no-match" class="no-match">
+                    ⚠️ Ingen matchande regel hittades. Kontrollera inmatade värden.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const rules = [{"number": "FlödesNr (Möjligt Utfall)", "psa_range": "PSA provsvar(P)", "mr_previous": "MRI analysresulat (P-q) (Senaste MR resultat (År q = 2,4,…) ofta q=2)", "mr_current": "MRI analysresulat (P)", "psad": "PSA-D(P)", "delta_psad": "Delta PSA-D", "biopsy_previous": "Biopsi Tidigare Utförd (J/N)", "urologist_referral": "Remiss Urolog(P)", "biopsy_indication": "Biopsi-indikation", "comment": "Kommentar till kansliet och urologen"}, {"number": 1, "psa_range": "0.1=<PSA<1", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 4-5", "psad": null, "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Bedömning", "comment": "Osannolik händelse. Biopsi om ny eller växande lesion "}, {"number": 2, "psa_range": "0.1=<PSA<1", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 3", "psad": null, "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 3, "psa_range": "0.1=<PSA<1", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 1-2", "psad": null, "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 4, "psa_range": "1=<PSA<3", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 4-5", "psad": null, "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Bedömning", "comment": "Biopsi om ny lesion, troligen biopsi om växande lesion"}, {"number": 5, "psa_range": "1=<PSA<3", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 3", "psad": "PSA-D>=b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Bedömning", "comment": "Osannolik händelse. Biopsi om ny lesion och PSA-densitet => 0,1 i nytt prov"}, {"number": 6, "psa_range": "1=<PSA<3", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 3", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 7, "psa_range": "1=<PSA<3", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Bedömning", "comment": "Mycket osannolik händelse. Systematisk biopsi om inte tidigare gjort och PSA-densitet => 0,15 i nytt prov"}, {"number": 8, "psa_range": "1=<PSA<3", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 9, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 4-5", "psad": null, "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Bedömning", "comment": "Biopsi beroende på tidigare biopsi av lesionen, lesions storleksförändring och PSAD-förändring"}, {"number": 10, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 3", "psad": "PSA-D>=b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Bedömning", "comment": "Biopsi om ny lesion och PSA-densitet => 0,1 i nytt prov"}, {"number": 11, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 3", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 12, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 13, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": ">= 0,05", "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 14, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": "<0,05", "biopsy_previous": "J", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 15, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 4-5", "psad": null, "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Bedömning", "comment": "Biopsi beroende på tidigare biopsi av lesionen, lesions storleksförändring och PSAD-förändring"}, {"number": 16, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 3", "psad": "PSA-D>=b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Bedömning", "comment": "Biopsi om ny lesion och PSA-densitet => 0,1 i nytt prov"}, {"number": 17, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 3", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 18, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": ">= 0,05", "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 19, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": "<0,05", "biopsy_previous": "J", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 20, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 4 - 5", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 21, "psa_range": "0.1=<PSA<1", "mr_previous": "PI-RADS = 3", "mr_current": "N/A", "psad": "N/A", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 22, "psa_range": "1=<PSA<3", "mr_previous": "PI-RADS = 3", "mr_current": "N/A", "psad": "N/A", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 23, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 4-5", "psad": null, "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": null}, {"number": 24, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 3", "psad": "PSA-D>=b", "delta_psad": ">= 0,05", "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Systematisk + riktade om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 25, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 3", "psad": "PSA-D>=b", "delta_psad": "<0,05", "biopsy_previous": "J", "urologist_referral": "J", "biopsy_indication": "Bedömning", "comment": "Biopsi om ny lesion och PSA-densitet => 0,1 i nytt prov"}, {"number": 26, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 3", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 27, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 3", "psad": "PSA-D>=b", "delta_psad": null, "biopsy_previous": "N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 28, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": ">= 0,05", "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 29, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 30, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": null, "biopsy_previous": "N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 31, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": "<0,05", "biopsy_previous": "J", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 32, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 4-5", "psad": null, "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 33, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 3", "psad": "PSA-D>=b", "delta_psad": ">= 0,05", "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Systematisk + riktade om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 34, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 3", "psad": "PSA-D>=b", "delta_psad": "<0,05", "biopsy_previous": "J", "urologist_referral": "J", "biopsy_indication": "Bedömning", "comment": "Biopsi om ny lesion och PSA-densitet => 0,1 i nytt prov"}, {"number": 35, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 3", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 36, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 3", "psad": "PSA-D>=b", "delta_psad": null, "biopsy_previous": "N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 37, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": ">= 0,05", "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 38, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 39, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": null, "biopsy_previous": "N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 40, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 3", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": "<0,05", "biopsy_previous": "J", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 41, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": ">= 0,05", "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 42, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 43, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": null, "biopsy_previous": "N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 44, "psa_range": "PSA>=10", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": "<0,05", "biopsy_previous": "J", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 45, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "PI-RADS = 4-5", "psad": null, "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 46, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "PI-RADS = 3", "psad": "PSA-D>=b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": null}, {"number": 47, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "PI-RADS = 3", "psad": "PSA-D< b", "delta_psad": null, "biopsy_previous": "Oberoende om J/N", "urologist_referral": "N", "biopsy_indication": null, "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 48, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": ">= 0,05", "biopsy_previous": "Oberoende om J/N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 49, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": "<0,05", "biopsy_previous": "J", "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 50, "psa_range": "3=<PSA<10", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "PI-RADS = 1-2", "psad": "PSA-D>=b", "delta_psad": "<0,05", "biopsy_previous": "N", "urologist_referral": "J", "biopsy_indication": "Klar", "comment": "Om inte PSA2 är så lågt att biopsiindikationen faller bort"}, {"number": 51, "psa_range": "1=<PSA<3", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "N/A", "psad": "N/A", "delta_psad": "N/A", "biopsy_previous": null, "urologist_referral": "N", "biopsy_indication": null, "comment": null}, {"number": 52, "psa_range": "0.1=<PSA<1", "mr_previous": "PI-RADS = 1 - 2", "mr_current": "N/A", "psad": "N/A", "delta_psad": "N/A", "biopsy_previous": null, "urologist_referral": "N", "biopsy_indication": null, "comment": null}];
+        
+        const psaInput = document.getElementById('psa');
+        const prostateInput = document.getElementById('prostate');
+        const piradsInput = document.getElementById('pirads');
+        const pirads_prevInput = document.getElementById('pirads_prev');
+        const biopsy_prevInput = document.getElementById('biopsy_prev');
+        const matchedResultsDiv = document.getElementById('matched-results');
+        const noMatchDiv = document.getElementById('no-match');
+        
+        function getPSARange(psa) {
+            if (psa < 0.1) return null;
+            if (psa < 1) return '0.1=<PSA<1';
+            if (psa < 3) return '1=<PSA<3';
+            if (psa < 10) return '3=<PSA<10';
+            return 'PSA>=10';
+        }
+        
+        function findMatchingRules() {
+            const psa = parseFloat(psaInput.value);
+            const prostate = parseFloat(prostateInput.value);
+            const pirads = piradsInput.value;
+            const pirads_prev = pirads_prevInput.value;
+            const biopsy_prev = biopsy_prevInput.value;
+            
+            if (isNaN(psa)) {
+                matchedResultsDiv.innerHTML = '';
+                noMatchDiv.classList.remove('show');
+                return;
+            }
+            
+            const psaRange = getPSARange(psa);
+            if (!psaRange) {
+                noMatchDiv.classList.add('show');
+                matchedResultsDiv.innerHTML = '';
+                return;
+            }
+            
+            // Find matching rules
+            const matches = rules.filter(rule => {
+                let match = rule.psa_range === psaRange;
+                
+                if (match && pirads) {
+                    match = rule.mr_current === pirads;
+                }
+                
+                if (match && pirads_prev) {
+                    match = rule.mr_previous === pirads_prev;
+                }
+                
+                return match;
+            });
+            
+            if (matches.length === 0) {
+                noMatchDiv.classList.add('show');
+                matchedResultsDiv.innerHTML = '';
+            } else {
+                noMatchDiv.classList.remove('show');
+                displayMatches(matches, psa, prostate);
+            }
+        }
+        
+        function displayMatches(matches, psa, prostate) {
+            let html = '';
+            
+            for (const match of matches) {
+                html += `
+                    <div class="result-card show">
+                        <h3>Rule {'#'}${match.number}</h3>
+                        
+                        <p><span class="label">PSA Range:</span> ${match.psa_range}</p>
+                        
+                        ${match.mr_current ? `<p><span class="label">Current PI-RADS:</span> ${match.mr_current}</p>` : ''}
+                        ${match.mr_previous ? `<p><span class="label">Previous PI-RADS:</span> ${match.mr_previous}</p>` : ''}
+                        
+                        ${match.psad ? `<p><span class="label">PSA-D:</span> ${match.psad}</p>` : ''}
+                        ${match.delta_psad ? `<p><span class="label">Delta PSA-D:</span> ${match.delta_psad}</p>` : ''}
+                        
+                        <div class="recommendation">
+                            <h4>Rekommendation:</h4>
+                            <p>
+                                <span class="label">Remiss urolog:</span>
+                                <span class="value">${match.urologist_referral}</span>
+                            </p>
+                            ${match.biopsy_indication ? `<p><span class="label">Biopsi-indikation:</span> ${match.biopsy_indication}</p>` : ''}
+                        </div>
+                        
+                        ${match.comment ? `<p style="margin-top: 15px; font-style: italic; color: #666;"><span class="label">Notering:</span> ${match.comment}</p>` : ''}
+                    </div>
+                `;
+            }
+            
+            // Add calculation if prostate size is provided
+            if (!isNaN(prostate) && prostate > 0 && !isNaN(psa)) {
+                const psad = (psa / prostate).toFixed(3);
+                html += `
+                    <div class="calculation show">
+                        <p><span class="label">Beräknad PSA-densitet (PSAD):</span> ${psad} (= ${psa} / ${prostate})</p>
+                    </div>
+                `;
+            }
+            
+            matchedResultsDiv.innerHTML = html;
+        }
+        
+        psaInput.addEventListener('input', findMatchingRules);
+        prostateInput.addEventListener('input', findMatchingRules);
+        piradsInput.addEventListener('change', findMatchingRules);
+        pirads_prevInput.addEventListener('change', findMatchingRules);
+        biopsy_prevInput.addEventListener('change', findMatchingRules);
+    </script>
+</body>
+</html>
