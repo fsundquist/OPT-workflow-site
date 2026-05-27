@@ -99,41 +99,6 @@
     }
 
     /* ── App links ── */
-    #app-section { display: none; }
-
-    .link-btn {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      width: 100%;
-      padding: 0.85rem 1rem;
-      margin-bottom: 0.75rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: border-color 0.15s, background 0.15s;
-    }
-
-    .link-btn:hover {
-      border-color: var(--accent);
-      background: #1c2230;
-    }
-
-    .link-btn .icon {
-      font-size: 1.4rem;
-      flex-shrink: 0;
-    }
-
-    .link-btn .desc {
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-weight: 400;
-      margin-top: 0.1rem;
-    }
 
     footer {
       margin-top: 2rem;
@@ -164,25 +129,7 @@
     <p id="error-msg">Fel åtkomstkod. Försök igen.</p>
   </div>
 
-  <!-- Appsektion (visas efter inloggning) -->
-  <div id="app-section">
-    <a class="link-btn" href="generated/flowchart.html" target="_blank" rel="noopener">
-      <span class="icon">🔀</span>
-      <span>
-        <strong>Öppna interaktivt flödesschema</strong>
-        <br />
-        <span class="desc">generated/flowchart.html</span>
-      </span>
-    </a>
-    <a class="link-btn" href="generated/algorithm_decision_tool.html" target="_blank" rel="noopener">
-      <span class="icon">🩺</span>
-      <span>
-        <strong>Öppna beslutstöd</strong>
-        <br />
-        <span class="desc">generated/algorithm_decision_tool.html</span>
-      </span>
-    </a>
-  </div>
+  <!-- Appsektion: omdirigering sker automatiskt via JavaScript -->
 
   <footer>
     OPT Workflow &nbsp;·&nbsp; Internt verktyg &nbsp;·&nbsp;
@@ -201,7 +148,6 @@
   const SESSION_KEY = "opt_workflow_auth";
 
   const loginSection = document.getElementById("login-section");
-  const appSection   = document.getElementById("app-section");
   const codeInput    = document.getElementById("code-input");
   const loginBtn     = document.getElementById("login-btn");
   const errorMsg     = document.getElementById("error-msg");
@@ -216,7 +162,7 @@
 
   function showApp() {
     loginSection.style.display = "none";
-    appSection.style.display   = "block";
+    window.location.href = "generated/flowchart.html";
   }
 
   // Kontrollera om sessionen redan är autentiserad

@@ -458,6 +458,8 @@
             // Enkel, stabil sanitering i linje med tidigare fungerande version
             return String(name ?? '')
                 .replace(/"/g, '')
+                .replaceAll('≤', '<=')
+                .replaceAll('≥', '>=')
                 .replace(/[(]/g, ' ')
                 .replace(/[)]/g, '')
                 .replaceAll('[', ' ')
@@ -504,7 +506,7 @@
                 if (node.type === 'start' || node.type === 'end') {
                     code += `  ${nodeId}([${name}])\n`;
                 } else if (node.type === 'decision') {
-                    code += `  ${nodeId}{${name}}\n`;
+                    code += `  ${nodeId}{"${name}"}\n`;
                 } else {
                     code += `  ${nodeId}["${name}"]\n`;
                 }
@@ -1319,8 +1321,7 @@
 
             if (resultHTML) {
                 const safeResultText = resultHTML
-                    .replace(/<br\s*\/?\s*>/gi, '
-')
+                    .replace(/<br\s*\/?\s*>/gi, '\n')
                     .replace(/<[^>]*>/g, '');
                 resultsDiv.textContent = safeResultText;
                 resultsDiv.style.whiteSpace = 'pre-line';
