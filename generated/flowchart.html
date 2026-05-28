@@ -228,7 +228,7 @@
                 <small style="color: #666; font-size: 12px; display: block; margin-top: 8px;">Resultat från ny MR-undersökning</small>
             </div>
             <div class="control-group hidden" id="newLesionPIRADS3Group">
-                <label>Ny lesion vid PIRADS 3?</label>
+                <label data-ui-key="form.new_lesion_pirads3.label" data-fallback="Ny lesion vid PIRADS 3?">Ny lesion vid PIRADS 3?</label>
                 <div style="display: flex; gap: 15px; padding-top: 8px; flex-wrap: wrap;">
                     <label style="font-weight: normal; cursor: pointer;">
                         <input type="radio" name="newLesionPIRADS3" value="yes" disabled> Ja
@@ -237,10 +237,10 @@
                         <input type="radio" name="newLesionPIRADS3" value="no" disabled> Nej
                     </label>
                 </div>
-                <small style="color: #666; font-size: 12px; display: block; margin-top: 8px;">Visas vid tidigare biopserad, PIRADS 3 och Ny PSAD > 0.1</small>
+                <small style="color: #666; font-size: 12px; display: block; margin-top: 8px;" data-ui-key="form.new_lesion_pirads3.help" data-fallback="Visas vid tidigare biopserad, PIRADS 3 och Ny PSAD > 0.1">Visas vid tidigare biopserad, PIRADS 3 och Ny PSAD > 0.1</small>
             </div>
             <div class="control-group hidden" id="knownLesionProgressPIRADS3Group">
-                <label>Progress av känd lesion vid PIRADS 3?</label>
+                <label data-ui-key="form.known_lesion_progress_pirads3.label" data-fallback="Progress av känd lesion vid PIRADS 3?">Progress av känd lesion vid PIRADS 3?</label>
                 <div style="display: flex; gap: 15px; padding-top: 8px; flex-wrap: wrap;">
                     <label style="font-weight: normal; cursor: pointer;">
                         <input type="radio" name="knownLesionProgressPIRADS3" value="yes" disabled> Ja
@@ -249,10 +249,10 @@
                         <input type="radio" name="knownLesionProgressPIRADS3" value="no" disabled> Nej
                     </label>
                 </div>
-                <small style="color: #666; font-size: 12px; display: block; margin-top: 8px;">Visas när ny lesion = Nej i PIRADS 3-grenen</small>
+                <small style="color: #666; font-size: 12px; display: block; margin-top: 8px;" data-ui-key="form.known_lesion_progress_pirads3.help" data-fallback="Visas när ny lesion = Nej i PIRADS 3-grenen">Visas när ny lesion = Nej i PIRADS 3-grenen</small>
             </div>
             <div class="control-group hidden" id="newLesionOrProgressPIRADS4Group">
-                <label>Ny lesion eller progress vid PIRADS 4?</label>
+                <label data-ui-key="form.new_lesion_or_progress_pirads4.label" data-fallback="Ny lesion eller progress vid PIRADS 4?">Ny lesion eller progress vid PIRADS 4?</label>
                 <div style="display: flex; gap: 15px; padding-top: 8px; flex-wrap: wrap;">
                     <label style="font-weight: normal; cursor: pointer;">
                         <input type="radio" name="newLesionOrProgressPIRADS4" value="yes" disabled> Ja
@@ -261,19 +261,19 @@
                         <input type="radio" name="newLesionOrProgressPIRADS4" value="no" disabled> Nej
                     </label>
                 </div>
-                <small style="color: #666; font-size: 12px; display: block; margin-top: 8px;">Visas vid tidigare biopserad, PIRADS 4 och bedömning vid urolog</small>
+                <small style="color: #666; font-size: 12px; display: block; margin-top: 8px;" data-ui-key="form.new_lesion_or_progress_pirads4.help" data-fallback="Visas vid tidigare biopserad, PIRADS 4 och bedömning vid urolog">Visas vid tidigare biopserad, PIRADS 4 och bedömning vid urolog</small>
             </div>
             <div class="control-group hidden" id="biopsyDecisionPIRADS4Group">
-                <label>Ställningstagande biopsi (PIRADS 4)?</label>
+                <label data-ui-key="form.biopsy_decision_pirads4.label" data-fallback="Ställningstagande biopsi (PIRADS 4)?">Ställningstagande biopsi (PIRADS 4)?</label>
                 <div style="display: flex; gap: 15px; padding-top: 8px; flex-wrap: wrap;">
                     <label style="font-weight: normal; cursor: pointer;">
-                        <input type="radio" name="biopsyDecisionPIRADS4" value="yes" disabled> Biopsi
+                        <input type="radio" name="biopsyDecisionPIRADS4" value="yes" disabled> <span data-ui-key="form.biopsy_decision_pirads4.option_biopsy" data-fallback="Biopsi">Biopsi</span>
                     </label>
                     <label style="font-weight: normal; cursor: pointer;">
-                        <input type="radio" name="biopsyDecisionPIRADS4" value="no" disabled> Ej biopsi
+                        <input type="radio" name="biopsyDecisionPIRADS4" value="no" disabled> <span data-ui-key="form.biopsy_decision_pirads4.option_no_biopsy" data-fallback="Ej biopsi">Ej biopsi</span>
                     </label>
                 </div>
-                <small style="color: #666; font-size: 12px; display: block; margin-top: 8px;">Visas när ingen ny lesion/progress och delta PSAD &lt; 0.05</small>
+                <small style="color: #666; font-size: 12px; display: block; margin-top: 8px;" data-ui-key="form.biopsy_decision_pirads4.help" data-fallback="Visas när ingen ny lesion/progress och delta PSAD &lt; 0.05">Visas när ingen ny lesion/progress och delta PSAD &lt; 0.05</small>
             </div>
             <div class="control-group hidden" id="prostateGroup">
                 <label for="prostate">Prostatastorlek aktuell (mL):</label>
@@ -312,13 +312,13 @@
 
         <div class="controls">
             <div class="control-group hidden" id="biopsyResultGroup">
-                <label>Biopsiresultat (primär biopsi):</label>
+                <label data-ui-key="form.biopsy_result_primary.label" data-fallback="Biopsiresultat (primär biopsi):">Biopsiresultat (primär biopsi):</label>
                 <div style="display: flex; gap: 15px; padding-top: 8px;">
                     <label style="font-weight: normal; cursor: pointer;">
-                        <input type="radio" name="biopsyResult" value="cancer" disabled> Cancer
+                        <input type="radio" name="biopsyResult" value="cancer" disabled> <span data-ui-key="status.cancer.label" data-fallback="Cancer">Cancer</span>
                     </label>
                     <label style="font-weight: normal; cursor: pointer;">
-                        <input type="radio" name="biopsyResult" value="benign" disabled> Benign
+                        <input type="radio" name="biopsyResult" value="benign" disabled> <span data-ui-key="status.benign.label" data-fallback="Benign">Benign</span>
                     </label>
                 </div>
             </div>
@@ -331,13 +331,13 @@
                 <small style="color: #666; font-size: 12px; display: block; margin-top: 4px;">Endast vid benign primär biopsi</small>
             </div>
             <div class="control-group hidden" id="rebiopsyResultGroup">
-                <label>Biopsiresultat (rebiopsi):</label>
+                <label data-ui-key="form.biopsy_result_rebiopsy.label" data-fallback="Biopsiresultat (rebiopsi):">Biopsiresultat (rebiopsi):</label>
                 <div style="display: flex; gap: 15px; padding-top: 8px;">
                     <label style="font-weight: normal; cursor: pointer;">
-                        <input type="radio" name="rebiopsyResult" value="cancer" disabled> Cancer
+                        <input type="radio" name="rebiopsyResult" value="cancer" disabled> <span data-ui-key="status.cancer.label" data-fallback="Cancer">Cancer</span>
                     </label>
                     <label style="font-weight: normal; cursor: pointer;">
-                        <input type="radio" name="rebiopsyResult" value="benign" disabled> Benign
+                        <input type="radio" name="rebiopsyResult" value="benign" disabled> <span data-ui-key="status.benign.label" data-fallback="Benign">Benign</span>
                     </label>
                 </div>
             </div>
@@ -347,13 +347,13 @@
                 <small style="color: #666; font-size: 12px; display: block; margin-top: 4px;">Används för ny PSAD-beräkning mot prostatastorlek vid ny MR</small>
             </div>
             <div class="control-group hidden" id="systematicBiopsyPreviousResultGroup">
-                <label>Biopsiresultat (systematiska biopsier, tidigare biopsi):</label>
+                <label data-ui-key="form.biopsy_result_systematic_previous.label" data-fallback="Biopsiresultat (systematiska biopsier, tidigare biopsi):">Biopsiresultat (systematiska biopsier, tidigare biopsi):</label>
                 <div style="display: flex; gap: 15px; padding-top: 8px;">
                     <label style="font-weight: normal; cursor: pointer;">
-                        <input type="radio" name="systematicBiopsyPreviousResult" value="cancer" disabled> Cancer
+                        <input type="radio" name="systematicBiopsyPreviousResult" value="cancer" disabled> <span data-ui-key="status.cancer.label" data-fallback="Cancer">Cancer</span>
                     </label>
                     <label style="font-weight: normal; cursor: pointer;">
-                        <input type="radio" name="systematicBiopsyPreviousResult" value="benign" disabled> Benign
+                        <input type="radio" name="systematicBiopsyPreviousResult" value="benign" disabled> <span data-ui-key="status.benign.label" data-fallback="Benign">Benign</span>
                     </label>
                 </div>
             </div>
@@ -420,13 +420,71 @@
         });
 
         // Workflow-data bäddad in direkt från Excel
-        const workflowData = {"nodes": {"Start": {"id": "Start", "name": "Start", "type": "start", "condition": null}, "OfferOPT": {"id": "OfferOPT", "name": "Delta i OPT?", "type": "process", "condition": null}, "DecidePreviousBiopsyOPT": {"id": "DecidePreviousBiopsyOPT", "name": "Tidigare biopsi inom OPT?", "type": "decision", "condition": null}, "DecidePSA": {"id": "DecidePSA", "name": "Aktuellt PSA", "type": "decision", "condition": null}, "PSAAtPreviousMR": {"id": "PSAAtPreviousMR", "name": "PSA vid tidigare MR", "type": "process", "condition": null}, "LatestMRProstata": {"id": "LatestMRProstata", "name": "Senaste MR prostata", "type": "process", "condition": null}, "DecideLatestMR": {"id": "DecideLatestMR", "name": "Senaste MR-resultat", "type": "decision", "condition": null}, "PSAPreviousBiopsy": {"id": "PSAPreviousBiopsy", "name": "Aktuellt PSA", "type": "decision", "condition": null}, "LoopOffer6yr": {"id": "LoopOffer6yr", "name": "Nytt PSA om 6 år", "type": "process", "condition": null}, "LoopOffer2yr": {"id": "LoopOffer2yr", "name": "Nytt PSA om 2 år", "type": "process", "condition": null}, "MRPreviousBiopsy": {"id": "MRPreviousBiopsy", "name": "MRT prostata", "type": "process", "condition": null}, "DecideMRPreviousBiopsy": {"id": "DecideMRPreviousBiopsy", "name": "MR-resultat tidigare biopserad", "type": "decision", "condition": null}, "Urologist": {"id": "Urologist", "name": "Till urolog", "type": "decision", "condition": null}, "MR": {"id": "MR", "name": "MR undersökning", "type": "process", "condition": null}, "DecideMR": {"id": "DecideMR", "name": "MR-resultat", "type": "decision", "condition": null}, "DecidePSAD_PIRADS12": {"id": "DecidePSAD_PIRADS12", "name": "PIRADS 1-2", "type": "decision", "condition": null}, "DecidePSAD_PIRADS3": {"id": "DecidePSAD_PIRADS3", "name": "PIRADS 3", "type": "decision", "condition": null}, "ProcessPIRADS4": {"id": "ProcessPIRADS4", "name": "PIRADS 4", "type": "process", "condition": null}, "ProcessPIRADS5": {"id": "ProcessPIRADS5", "name": "PIRADS 5", "type": "process", "condition": null}, "PSABeforeBiopsy": {"id": "PSABeforeBiopsy", "name": "PSA innan biopsi", "type": "process", "condition": null}, "DecidePSAD_BeforeBiopsy": {"id": "DecidePSAD_BeforeBiopsy", "name": "PSAD innan biopsi", "type": "decision", "condition": null}, "Biopsy": {"id": "Biopsy", "name": "Systematiska biopsier", "type": "process", "condition": null}, "BiopsyPIRADS3_Targeted": {"id": "BiopsyPIRADS3_Targeted", "name": "Riktade biopsier", "type": "process", "condition": null}, "BiopsyPIRADS3_Systematic": {"id": "BiopsyPIRADS3_Systematic", "name": "Riktade + systematiska biopsier", "type": "process", "condition": null}, "DecideBiopsy": {"id": "DecideBiopsy", "name": "Primär biopsi", "type": "decision", "condition": null}, "BenignPAD": {"id": "BenignPAD", "name": "Benignt PAD – kompletterande biopsi?", "type": "decision", "condition": null}, "Exit": {"id": "Exit", "name": "Cancer diagnostiserat", "type": "end", "condition": null}, "DecidePSAD_BenignPAD_PIRADS14": {"id": "DecidePSAD_BenignPAD_PIRADS14", "name": "PSAD", "type": "decision", "condition": null}, "ExitBenignPIRADS5": {"id": "ExitBenignPIRADS5", "name": "Avsluta OPT – urologuppföljning", "type": "end", "condition": null}, "PSA_BenignPAD_3months": {"id": "PSA_BenignPAD_3months", "name": "PSA efter 3 månader", "type": "process", "condition": null}, "DecidePSAD_BenignPAD_3months": {"id": "DecidePSAD_BenignPAD_3months", "name": "PSAD", "type": "decision", "condition": null}, "BiopsyAfterBenignPAD": {"id": "BiopsyAfterBenignPAD", "name": "Systematiska biopsier", "type": "process", "condition": null}, "RebiopsyTargeted": {"id": "RebiopsyTargeted", "name": "Rebiopsi riktade + ev systematiska", "type": "process", "condition": null}, "DecideBiopsyAfterBenignPAD": {"id": "DecideBiopsyAfterBenignPAD", "name": "Rebiopsiresultat", "type": "decision", "condition": null}}, "edges": [{"from": "Start", "to": "OfferOPT", "label": ""}, {"from": "OfferOPT", "to": "DecidePreviousBiopsyOPT", "label": ""}, {"from": "DecidePreviousBiopsyOPT", "to": "DecidePSA", "label": "Nej"}, {"from": "DecidePreviousBiopsyOPT", "to": "PSAAtPreviousMR", "label": "Ja"}, {"from": "DecidePSA", "to": "LoopOffer6yr", "label": "0.1 ≤ PSA < 1"}, {"from": "DecidePSA", "to": "LoopOffer2yr", "label": "1 ≤ PSA < 3"}, {"from": "DecidePSA", "to": "MR", "label": "PSA ≥ 3"}, {"from": "PSAAtPreviousMR", "to": "LatestMRProstata", "label": ""}, {"from": "LatestMRProstata", "to": "DecideLatestMR", "label": ""}, {"from": "DecideLatestMR", "to": "PSAPreviousBiopsy", "label": "PIRADS 1-2"}, {"from": "DecideLatestMR", "to": "PSAPreviousBiopsy", "label": "PIRADS 3"}, {"from": "DecideLatestMR", "to": "PSAPreviousBiopsy", "label": "PIRADS 4"}, {"from": "PSAPreviousBiopsy", "to": "LoopOffer6yr", "label": "0.1 ≤ PSA < 1"}, {"from": "PSAPreviousBiopsy", "to": "LoopOffer2yr", "label": "1 ≤ PSA < 3"}, {"from": "PSAPreviousBiopsy", "to": "MRPreviousBiopsy", "label": "PSA ≥ 3"}, {"from": "LoopOffer6yr", "to": "OfferOPT", "label": ""}, {"from": "LoopOffer2yr", "to": "OfferOPT", "label": ""}, {"from": "MRPreviousBiopsy", "to": "DecideMRPreviousBiopsy", "label": ""}, {"from": "DecideMRPreviousBiopsy", "to": "Urologist", "label": "PIRADS 1-2"}, {"from": "DecideMRPreviousBiopsy", "to": "Urologist", "label": "PIRADS 3"}, {"from": "DecideMRPreviousBiopsy", "to": "Urologist", "label": "PIRADS 4"}, {"from": "DecideMRPreviousBiopsy", "to": "Urologist", "label": "PIRADS 5"}, {"from": "MR", "to": "DecideMR", "label": ""}, {"from": "DecideMR", "to": "DecidePSAD_PIRADS12", "label": "PIRADS 1-2"}, {"from": "DecideMR", "to": "DecidePSAD_PIRADS3", "label": "PIRADS 3"}, {"from": "DecideMR", "to": "ProcessPIRADS4", "label": "PIRADS 4"}, {"from": "DecideMR", "to": "ProcessPIRADS5", "label": "PIRADS 5"}, {"from": "DecidePSAD_PIRADS12", "to": "LoopOffer2yr", "label": "PSAD <0.2"}, {"from": "DecidePSAD_PIRADS12", "to": "PSABeforeBiopsy", "label": "PSAD ≥0.2"}, {"from": "DecidePSAD_PIRADS3", "to": "LoopOffer2yr", "label": "PSAD <0.1"}, {"from": "DecidePSAD_PIRADS3", "to": "PSABeforeBiopsy", "label": "PSAD ≥0.1"}, {"from": "ProcessPIRADS4", "to": "PSABeforeBiopsy", "label": ""}, {"from": "ProcessPIRADS5", "to": "PSABeforeBiopsy", "label": ""}, {"from": "PSABeforeBiopsy", "to": "DecidePSAD_BeforeBiopsy", "label": ""}, {"from": "DecidePSAD_BeforeBiopsy", "to": "LoopOffer2yr", "label": "PIRADS1-2 PSAD<0.2"}, {"from": "DecidePSAD_BeforeBiopsy", "to": "Biopsy", "label": "PIRADS1-2 PSAD≥0.2"}, {"from": "DecidePSAD_BeforeBiopsy", "to": "LoopOffer2yr", "label": "PIRADS3 PSAD<0.1"}, {"from": "DecidePSAD_BeforeBiopsy", "to": "BiopsyPIRADS3_Targeted", "label": "PIRADS3 0.1-0.2"}, {"from": "DecidePSAD_BeforeBiopsy", "to": "BiopsyPIRADS3_Systematic", "label": "PIRADS3 ≥0.2"}, {"from": "DecidePSAD_BeforeBiopsy", "to": "BiopsyPIRADS3_Systematic", "label": "PIRADS4-5"}, {"from": "Biopsy", "to": "DecideBiopsy", "label": ""}, {"from": "BiopsyPIRADS3_Targeted", "to": "DecideBiopsy", "label": ""}, {"from": "BiopsyPIRADS3_Systematic", "to": "DecideBiopsy", "label": ""}, {"from": "DecideBiopsy", "to": "BenignPAD", "label": "Benign"}, {"from": "DecideBiopsy", "to": "Exit", "label": "Cancer"}, {"from": "BenignPAD", "to": "DecidePSAD_BenignPAD_PIRADS14", "label": "PIRADS 1-4"}, {"from": "BenignPAD", "to": "ExitBenignPIRADS5", "label": "PIRADS 5"}, {"from": "DecidePSAD_BenignPAD_PIRADS14", "to": "LoopOffer2yr", "label": "PSAD <0.3"}, {"from": "DecidePSAD_BenignPAD_PIRADS14", "to": "PSA_BenignPAD_3months", "label": "PSAD ≥0.3"}, {"from": "PSA_BenignPAD_3months", "to": "DecidePSAD_BenignPAD_3months", "label": ""}, {"from": "DecidePSAD_BenignPAD_3months", "to": "BiopsyAfterBenignPAD", "label": "PSAD≥0.3 PIRADS1-2"}, {"from": "DecidePSAD_BenignPAD_3months", "to": "RebiopsyTargeted", "label": "PSAD≥0.3 PIRADS3-4"}, {"from": "DecidePSAD_BenignPAD_3months", "to": "LoopOffer2yr", "label": "PSAD<0.3"}, {"from": "BiopsyAfterBenignPAD", "to": "DecideBiopsyAfterBenignPAD", "label": ""}, {"from": "RebiopsyTargeted", "to": "DecideBiopsyAfterBenignPAD", "label": ""}, {"from": "DecideBiopsyAfterBenignPAD", "to": "LoopOffer2yr", "label": "Benign"}, {"from": "DecideBiopsyAfterBenignPAD", "to": "Exit", "label": "Cancer"}]};
+        const workflowData = {"nodes": {"Start": {"id": "Start", "name": "Start", "type": "start", "condition": null}, "OfferOPT": {"id": "OfferOPT", "name": "Delta i OPT?", "type": "process", "condition": null}, "DecidePreviousBiopsyOPT": {"id": "DecidePreviousBiopsyOPT", "name": "Tidigare biopsi inom OPT?", "type": "decision", "condition": null}, "DecidePSA": {"id": "DecidePSA", "name": "Aktuellt PSA", "type": "decision", "condition": null}, "PSAAtPreviousMR": {"id": "PSAAtPreviousMR", "name": "PSA vid tidigare MR", "type": "process", "condition": null}, "LatestMRProstata": {"id": "LatestMRProstata", "name": "Senaste MR prostata", "type": "process", "condition": null}, "DecideLatestMR": {"id": "DecideLatestMR", "name": "Senaste MR-resultat", "type": "decision", "condition": null}, "PSAPreviousBiopsy": {"id": "PSAPreviousBiopsy", "name": "Aktuellt PSA", "type": "decision", "condition": null}, "LoopOffer6yr": {"id": "LoopOffer6yr", "name": "Nytt PSA om 6 år", "type": "process", "condition": null}, "LoopOffer2yr": {"id": "LoopOffer2yr", "name": "Nytt PSA om 2 år", "type": "process", "condition": null}, "MRPreviousBiopsy": {"id": "MRPreviousBiopsy", "name": "MRT prostata", "type": "process", "condition": null}, "DecideMRPreviousBiopsy": {"id": "DecideMRPreviousBiopsy", "name": "MR-resultat tidigare biopserad", "type": "decision", "condition": null}, "PIRADS_PreviousBiopsy_12": {"id": "PIRADS_PreviousBiopsy_12", "name": "PIRADS 1-2", "type": "process", "condition": null}, "PIRADS_PreviousBiopsy_3": {"id": "PIRADS_PreviousBiopsy_3", "name": "PIRADS 3", "type": "process", "condition": null}, "PIRADS_PreviousBiopsy_4": {"id": "PIRADS_PreviousBiopsy_4", "name": "PIRADS 4", "type": "process", "condition": null}, "PIRADS_PreviousBiopsy_5": {"id": "PIRADS_PreviousBiopsy_5", "name": "PIRADS 5", "type": "process", "condition": null}, "UrologNewPSA": {"id": "UrologNewPSA", "name": "Nytt PSA vid urolog / nytt PSAD", "type": "decision", "condition": null}, "SystematicBiopsiesPrevious": {"id": "SystematicBiopsiesPrevious", "name": "Systematiska biopsier", "type": "process", "condition": null}, "NewLesionPIRADS3": {"id": "NewLesionPIRADS3", "name": "Ny lesion?", "type": "decision", "condition": null}, "KnownLesionProgressPIRADS3": {"id": "KnownLesionProgressPIRADS3", "name": "Progress av känd lesion?", "type": "decision", "condition": null}, "NewLesionOrProgressPIRADS4": {"id": "NewLesionOrProgressPIRADS4", "name": "Ny lesion/progress PIRADS 4?", "type": "decision", "condition": null}, "BiopsyDecisionPIRADS4": {"id": "BiopsyDecisionPIRADS4", "name": "Ställningstagande biopsi", "type": "decision", "condition": null}, "BiopsyTargeted_Previous": {"id": "BiopsyTargeted_Previous", "name": "Riktade biopsier (tidigare biopsi)", "type": "process", "condition": null}, "BiopsySystematic_Previous": {"id": "BiopsySystematic_Previous", "name": "Riktade + ev perilesionella/systematiska (tidigare biopsi)", "type": "process", "condition": null}, "Urologist": {"id": "Urologist", "name": "Till urolog", "type": "decision", "condition": null}, "MR": {"id": "MR", "name": "MR undersökning", "type": "process", "condition": null}, "DecideMR": {"id": "DecideMR", "name": "MR-resultat", "type": "decision", "condition": null}, "DecidePSAD_PIRADS12": {"id": "DecidePSAD_PIRADS12", "name": "PIRADS 1-2", "type": "decision", "condition": null}, "DecidePSAD_PIRADS3": {"id": "DecidePSAD_PIRADS3", "name": "PIRADS 3", "type": "decision", "condition": null}, "ProcessPIRADS4": {"id": "ProcessPIRADS4", "name": "PIRADS 4", "type": "process", "condition": null}, "ProcessPIRADS5": {"id": "ProcessPIRADS5", "name": "PIRADS 5", "type": "process", "condition": null}, "PSABeforeBiopsy": {"id": "PSABeforeBiopsy", "name": "PSA innan biopsi", "type": "process", "condition": null}, "DecidePSAD_BeforeBiopsy": {"id": "DecidePSAD_BeforeBiopsy", "name": "PSAD innan biopsi", "type": "decision", "condition": null}, "Biopsy": {"id": "Biopsy", "name": "Systematiska biopsier", "type": "process", "condition": null}, "BiopsyPIRADS3_Targeted": {"id": "BiopsyPIRADS3_Targeted", "name": "Riktade biopsier", "type": "process", "condition": null}, "BiopsyPIRADS3_Systematic": {"id": "BiopsyPIRADS3_Systematic", "name": "Riktade + systematiska biopsier", "type": "process", "condition": null}, "DecideBiopsy": {"id": "DecideBiopsy", "name": "Primär biopsi", "type": "decision", "condition": null}, "BenignPAD": {"id": "BenignPAD", "name": "Benignt PAD – kompletterande biopsi?", "type": "decision", "condition": null}, "Exit": {"id": "Exit", "name": "Cancer diagnostiserat", "type": "end", "condition": null}, "DecidePSAD_BenignPAD_PIRADS14": {"id": "DecidePSAD_BenignPAD_PIRADS14", "name": "PSAD", "type": "decision", "condition": null}, "ExitBenignPIRADS5": {"id": "ExitBenignPIRADS5", "name": "Avsluta OPT – urologuppföljning", "type": "end", "condition": null}, "PSA_BenignPAD_3months": {"id": "PSA_BenignPAD_3months", "name": "PSA efter 3 månader", "type": "process", "condition": null}, "DecidePSAD_BenignPAD_3months": {"id": "DecidePSAD_BenignPAD_3months", "name": "PSAD", "type": "decision", "condition": null}, "BiopsyAfterBenignPAD": {"id": "BiopsyAfterBenignPAD", "name": "Systematiska biopsier", "type": "process", "condition": null}, "RebiopsyTargeted": {"id": "RebiopsyTargeted", "name": "Rebiopsi riktade + ev systematiska", "type": "process", "condition": null}}, "edges": [{"from": "Start", "to": "OfferOPT", "label": ""}, {"from": "OfferOPT", "to": "DecidePreviousBiopsyOPT", "label": ""}, {"from": "DecidePreviousBiopsyOPT", "to": "DecidePSA", "label": "Nej"}, {"from": "DecidePreviousBiopsyOPT", "to": "PSAAtPreviousMR", "label": "Ja"}, {"from": "DecidePSA", "to": "LoopOffer6yr", "label": "0.1 ≤ PSA < 1"}, {"from": "DecidePSA", "to": "LoopOffer2yr", "label": "1 ≤ PSA < 3"}, {"from": "DecidePSA", "to": "MR", "label": "PSA ≥ 3"}, {"from": "PSAAtPreviousMR", "to": "LatestMRProstata", "label": ""}, {"from": "LatestMRProstata", "to": "DecideLatestMR", "label": ""}, {"from": "DecideLatestMR", "to": "PSAPreviousBiopsy", "label": "PIRADS 1-2"}, {"from": "DecideLatestMR", "to": "PSAPreviousBiopsy", "label": "PIRADS 3"}, {"from": "DecideLatestMR", "to": "PSAPreviousBiopsy", "label": "PIRADS 4"}, {"from": "PSAPreviousBiopsy", "to": "LoopOffer6yr", "label": "0.1 ≤ PSA < 1"}, {"from": "PSAPreviousBiopsy", "to": "LoopOffer2yr", "label": "1 ≤ PSA < 3"}, {"from": "PSAPreviousBiopsy", "to": "MRPreviousBiopsy", "label": "PSA ≥ 3"}, {"from": "LoopOffer6yr", "to": "OfferOPT", "label": ""}, {"from": "LoopOffer2yr", "to": "OfferOPT", "label": ""}, {"from": "MRPreviousBiopsy", "to": "DecideMRPreviousBiopsy", "label": ""}, {"from": "DecideMRPreviousBiopsy", "to": "PIRADS_PreviousBiopsy_12", "label": "PIRADS 1-2"}, {"from": "DecideMRPreviousBiopsy", "to": "PIRADS_PreviousBiopsy_3", "label": "PIRADS 3"}, {"from": "DecideMRPreviousBiopsy", "to": "PIRADS_PreviousBiopsy_4", "label": "PIRADS 4"}, {"from": "DecideMRPreviousBiopsy", "to": "PIRADS_PreviousBiopsy_5", "label": "PIRADS 5"}, {"from": "PIRADS_PreviousBiopsy_12", "to": "LoopOffer2yr", "label": "Nytt PSAD <= 0.2 eller deltaPSAD <= 0.05"}, {"from": "PIRADS_PreviousBiopsy_12", "to": "Urologist", "label": "Nytt PSAD > 0.2 och deltaPSAD > 0.05"}, {"from": "PIRADS_PreviousBiopsy_3", "to": "LoopOffer2yr", "label": "Ny PSAD < 0.1"}, {"from": "PIRADS_PreviousBiopsy_3", "to": "NewLesionPIRADS3", "label": "Ny PSAD > 0.1"}, {"from": "PIRADS_PreviousBiopsy_4", "to": "Urologist", "label": ""}, {"from": "PIRADS_PreviousBiopsy_5", "to": "Urologist", "label": ""}, {"from": "UrologNewPSA", "to": "SystematicBiopsiesPrevious", "label": "PIRADS 1-2 och Nytt PSAD > 0.2 och deltaPSAD > 0.05"}, {"from": "UrologNewPSA", "to": "LoopOffer2yr", "label": "PIRADS 1-2 och Nytt PSAD <= 0.2 eller deltaPSAD <= 0.05"}, {"from": "UrologNewPSA", "to": "NewLesionOrProgressPIRADS4", "label": "PIRADS 4"}, {"from": "UrologNewPSA", "to": "BiopsyTargeted_Previous", "label": "PIRADS 3 och PSA-D 0.1-0.199"}, {"from": "UrologNewPSA", "to": "BiopsySystematic_Previous", "label": "PIRADS 3 och PSA-D >= 0.2"}, {"from": "UrologNewPSA", "to": "LoopOffer2yr", "label": "PIRADS 3 och PSA-D < 0.1"}, {"from": "UrologNewPSA", "to": "BiopsySystematic_Previous", "label": "PIRADS 5"}, {"from": "SystematicBiopsiesPrevious", "to": "LoopOffer2yr", "label": "Benign"}, {"from": "SystematicBiopsiesPrevious", "to": "Exit", "label": "Cancer"}, {"from": "NewLesionPIRADS3", "to": "Urologist", "label": "Ja"}, {"from": "NewLesionPIRADS3", "to": "KnownLesionProgressPIRADS3", "label": "Nej"}, {"from": "KnownLesionProgressPIRADS3", "to": "Urologist", "label": "Ja"}, {"from": "KnownLesionProgressPIRADS3", "to": "LoopOffer2yr", "label": "Nej och deltaPSAD < 0.05"}, {"from": "KnownLesionProgressPIRADS3", "to": "Urologist", "label": "Nej och deltaPSAD >= 0.05"}, {"from": "NewLesionOrProgressPIRADS4", "to": "BiopsySystematic_Previous", "label": "Ja (ny lesion/progress)"}, {"from": "NewLesionOrProgressPIRADS4", "to": "BiopsyDecisionPIRADS4", "label": "Nej och deltaPSAD < 0.05"}, {"from": "NewLesionOrProgressPIRADS4", "to": "BiopsySystematic_Previous", "label": "Nej och deltaPSAD >= 0.05"}, {"from": "BiopsyDecisionPIRADS4", "to": "BiopsySystematic_Previous", "label": "Biopsi"}, {"from": "BiopsyDecisionPIRADS4", "to": "LoopOffer2yr", "label": "Ej biopsi"}, {"from": "BiopsyTargeted_Previous", "to": "Exit", "label": "Cancer"}, {"from": "BiopsyTargeted_Previous", "to": "LoopOffer2yr", "label": "Benign"}, {"from": "BiopsySystematic_Previous", "to": "Exit", "label": "Cancer"}, {"from": "BiopsySystematic_Previous", "to": "LoopOffer2yr", "label": "PIRADS 3 och Benign"}, {"from": "BiopsySystematic_Previous", "to": "ExitBenignPIRADS5", "label": "PIRADS 5 och Benign"}, {"from": "Urologist", "to": "UrologNewPSA", "label": "Ta nytt PSA"}, {"from": "MR", "to": "DecideMR", "label": ""}, {"from": "DecideMR", "to": "DecidePSAD_PIRADS12", "label": "PIRADS 1-2"}, {"from": "DecideMR", "to": "DecidePSAD_PIRADS3", "label": "PIRADS 3"}, {"from": "DecideMR", "to": "ProcessPIRADS4", "label": "PIRADS 4"}, {"from": "DecideMR", "to": "ProcessPIRADS5", "label": "PIRADS 5"}, {"from": "DecidePSAD_PIRADS12", "to": "LoopOffer2yr", "label": "PSAD <0.2"}, {"from": "DecidePSAD_PIRADS12", "to": "PSABeforeBiopsy", "label": "PSAD ≥0.2"}, {"from": "DecidePSAD_PIRADS3", "to": "LoopOffer2yr", "label": "PSAD <0.1"}, {"from": "DecidePSAD_PIRADS3", "to": "PSABeforeBiopsy", "label": "PSAD ≥0.1"}, {"from": "ProcessPIRADS4", "to": "PSABeforeBiopsy", "label": ""}, {"from": "ProcessPIRADS5", "to": "PSABeforeBiopsy", "label": ""}, {"from": "PSABeforeBiopsy", "to": "DecidePSAD_BeforeBiopsy", "label": ""}, {"from": "DecidePSAD_BeforeBiopsy", "to": "LoopOffer2yr", "label": "PIRADS1-2 PSAD<0.2"}, {"from": "DecidePSAD_BeforeBiopsy", "to": "Biopsy", "label": "PIRADS1-2 PSAD≥0.2"}, {"from": "DecidePSAD_BeforeBiopsy", "to": "LoopOffer2yr", "label": "PIRADS3 PSAD<0.1"}, {"from": "DecidePSAD_BeforeBiopsy", "to": "BiopsyPIRADS3_Targeted", "label": "PIRADS3 0.1-0.2"}, {"from": "DecidePSAD_BeforeBiopsy", "to": "BiopsyPIRADS3_Systematic", "label": "PIRADS3 ≥0.2"}, {"from": "DecidePSAD_BeforeBiopsy", "to": "BiopsyPIRADS3_Systematic", "label": "PIRADS4-5"}, {"from": "Biopsy", "to": "DecideBiopsy", "label": ""}, {"from": "BiopsyPIRADS3_Targeted", "to": "DecideBiopsy", "label": ""}, {"from": "BiopsyPIRADS3_Systematic", "to": "DecideBiopsy", "label": ""}, {"from": "DecideBiopsy", "to": "BenignPAD", "label": "Benign"}, {"from": "DecideBiopsy", "to": "Exit", "label": "Cancer"}, {"from": "BenignPAD", "to": "DecidePSAD_BenignPAD_PIRADS14", "label": "PIRADS 1-4"}, {"from": "BenignPAD", "to": "ExitBenignPIRADS5", "label": "PIRADS 5"}, {"from": "DecidePSAD_BenignPAD_PIRADS14", "to": "LoopOffer2yr", "label": "PSAD <0.3"}, {"from": "DecidePSAD_BenignPAD_PIRADS14", "to": "PSA_BenignPAD_3months", "label": "PSAD ≥0.3"}, {"from": "PSA_BenignPAD_3months", "to": "DecidePSAD_BenignPAD_3months", "label": ""}, {"from": "DecidePSAD_BenignPAD_3months", "to": "BiopsyAfterBenignPAD", "label": "PSAD≥0.3 PIRADS1-2"}, {"from": "DecidePSAD_BenignPAD_3months", "to": "RebiopsyTargeted", "label": "PSAD≥0.3 PIRADS3-4"}, {"from": "DecidePSAD_BenignPAD_3months", "to": "LoopOffer2yr", "label": "PSAD<0.3"}, {"from": "BiopsyAfterBenignPAD", "to": "LoopOffer2yr", "label": "Benign"}, {"from": "BiopsyAfterBenignPAD", "to": "Exit", "label": "Cancer"}, {"from": "RebiopsyTargeted", "to": "LoopOffer2yr", "label": "Benign"}, {"from": "RebiopsyTargeted", "to": "Exit", "label": "Cancer"}]};
+        const recommendationTexts = {"LoopOffer2yr": "📅 Rekommendation: Nytt PSA om 2 år", "LoopOffer6yr": "📅 Rekommendation: Nytt PSA om 6 år", "Exit": "⛔ Rekommendation: Cancer - Avsluta OPT", "ExitBenignPIRADS5": "⚠️ Rekommendation: PIRADS 5 Benign - Avsluta OPT", "Urologist": "👨‍⚕️ Rekommendation: Remiss till urolog", "Biopsy": "🧪 Rekommendation: Biopsi - Systematiska biopsier", "BiopsyPIRADS3_Targeted": "🧪 Rekommendation: Biopsi - Riktade/fusionsbiopsier", "BiopsyTargeted_Previous": "🧪 Rekommendation: Biopsi - Riktade/fusionsbiopsier", "BiopsyPIRADS3_Systematic": "🧪 Rekommendation: Biopsi - Riktade/fusionsbiopsier + systematiska biopsier", "BiopsySystematic_Previous": "🧪 Rekommendation: Biopsi - Riktade/fusionsbiopsier + systematiska biopsier", "SystematicBiopsiesPrevious": "🧪 Rekommendation: Biopsi - Riktade/fusionsbiopsier + systematiska biopsier", "MR": "🧭 Rekommendation: Ange PIRADS (MR-svar) för nästa steg", "DecideMR": "🧭 Rekommendation: Ange PIRADS (MR-svar) för nästa steg", "PSABeforeBiopsy": "🧭 Rekommendation: Ange nytt PSA innan biopsi", "DecidePSAD_BeforeBiopsy": "🧭 Rekommendation: Ange nytt PSA innan biopsi", "DecideBiopsy": "🧭 Rekommendation: Ange biopsiresultat (Cancer/Benign)", "BenignPAD": "📅 Rekommendation: Nytt PSA om 3 månader", "DecidePSAD_BenignPAD_PIRADS14": "📅 Rekommendation: Nytt PSA om 3 månader", "PSA_BenignPAD_3months": "📅 Rekommendation: Nytt PSA om 3 månader", "DecidePSAD_BenignPAD_3months": "📅 Rekommendation: Nytt PSA om 3 månader", "RebiopsyTargeted": "🧭 Rekommendation: Ange rebiopsiresultat (Cancer/Benign)", "BiopsyAfterBenignPAD": "🧭 Rekommendation: Ange rebiopsiresultat (Cancer/Benign)", "DecideBiopsyAfterBenignPAD": "🧭 Rekommendation: Ange rebiopsiresultat (Cancer/Benign)", "__rules__": {"psa_classification": {"psa_lt_1": {"text": "PSA < 1 → Nytt PSA om 6 år", "severity": "info"}, "psa_1_to_lt_3": {"text": "1 ≤ PSA < 3 → Nytt PSA om 2 år", "severity": "info"}, "psa_ge_3": {"text": "PSA ≥ 3 → MR-undersökning", "severity": "warning"}}, "urolog_decision": {"urolog_enter_new_psa": {"text": "Ange nytt PSA vid urolog för fortsatt bedömning", "severity": "warning"}, "urolog_pirads3_psad_0.1_0.199": {"text": "PIRADS 3 vid urolog: PSA-D 0.1-0.199 → Riktade biopsier", "severity": "action"}, "urolog_pirads3_psad_ge_0.2": {"text": "PIRADS 3, Delta PSAD >= 0.05 -> Riktade + systematiska biopsier", "severity": "action"}, "urolog_pirads3_psad_lt_0.1": {"text": "PIRADS 3 vid urolog: PSA-D < 0.1 → Nytt PSA om 2 år", "severity": "info"}, "urolog_pirads4_new_lesion_progress": {"text": "PIRADS 4 vid urolog: Ny lesion/progress → Riktade + systematiska biopsier", "severity": "action"}, "urolog_pirads4_delta_lt_0.05_biopsy_yes": {"text": "PIRADS 4 vid urolog: deltaPSAD < 0.05 och biopsibeslut = Ja → Riktade + systematiska biopsier", "severity": "action"}, "urolog_pirads4_delta_lt_0.05_biopsy_no": {"text": "PIRADS 4 vid urolog: deltaPSAD < 0.05 och biopsibeslut = Nej → Nytt PSA om 2 år", "severity": "info"}, "urolog_pirads4_delta_lt_0.05_decision_required": {"text": "PIRADS 4 vid urolog: deltaPSAD < 0.05 → Ställningstagande biopsi krävs", "severity": "warning"}, "urolog_pirads4_delta_ge_0.05": {"text": "PIRADS 4 vid urolog: deltaPSAD ≥ 0.05 → Riktade + systematiska biopsier", "severity": "action"}, "urolog_pirads5_biopsy": {"text": "PIRADS 5 vid urolog: Riktade + systematiska biopsier", "severity": "action"}, "urolog_psad_criteria_met": {"text": "PSAD vid urolog uppfyller kriterier (PSAD > 0.2 och deltaPSAD > 0.05) → Systematiska biopsier", "severity": "action"}, "urolog_psad_criteria_not_met": {"text": "PSAD vid urolog uppfyller ej kriterier (PSAD > 0.2 och deltaPSAD > 0.05) → Ingen systematisk biopsi i detta steg", "severity": "info"}}, "pirads_decision": {"pirads_1_2_psad_lt_0.2": {"text": "PSA om 2 år", "severity": "info"}, "pirads_1_2_enter_psa_before_decision": {"text": "Ange nytt PSA före beslut", "severity": "warning"}, "pirads_1_2_psad_before_ge_0.2": {"text": "Biopsi", "severity": "action"}, "pirads_1_2_psad_before_lt_0.2": {"text": "PSA om 2 år", "severity": "info"}, "pirads_3_psad_lt_0.1": {"text": "PSA om 2 år", "severity": "info"}, "pirads_3_enter_psa_before_decision": {"text": "Ange nytt PSA före beslut", "severity": "warning"}, "pirads_3_psad_before_lt_0.1": {"text": "PSA om 2 år", "severity": "info"}, "pirads_3_psad_before_0.1_0.199": {"text": "Riktade biopsier", "severity": "action"}, "pirads_3_psad_before_ge_0.2": {"text": "Riktade + systematiska biopsier", "severity": "action"}, "pirads_4_biopsy": {"text": "Biopsi", "severity": "action"}, "pirads_5_biopsy": {"text": "Biopsi", "severity": "action"}}, "psad_followup": {"psad_followup_ge_0.3_pirads_1_2": {"text": "PSAD ≥ 0.3 → Systematiska biopsier krävs", "severity": "action"}, "psad_followup_ge_0.3_pirads_3_4": {"text": "PSAD ≥ 0.3 → Riktade + ev systematiska biopsier krävs", "severity": "action"}, "psad_followup_lt_0.3": {"text": "PSAD < 0.3 → PSA-kontroll om 2 år", "severity": "info"}}}, "__ui_clinical_texts__": {"form.new_lesion_pirads3.label": {"text": "Ny lesion vid PIRADS 3?", "context": "form_label"}, "form.new_lesion_pirads3.help": {"text": "Visas vid tidigare biopserad, PIRADS 3 och Ny PSAD > 0.1", "context": "form_help"}, "form.known_lesion_progress_pirads3.label": {"text": "Progress av känd lesion vid PIRADS 3?", "context": "form_label"}, "form.known_lesion_progress_pirads3.help": {"text": "Visas när ny lesion = Nej i PIRADS 3-grenen", "context": "form_help"}, "form.new_lesion_or_progress_pirads4.label": {"text": "Ny lesion eller progress vid PIRADS 4?", "context": "form_label"}, "form.new_lesion_or_progress_pirads4.help": {"text": "Visas vid tidigare biopserad, PIRADS 4 och bedömning vid urolog", "context": "form_help"}, "form.biopsy_decision_pirads4.label": {"text": "Ställningstagande biopsi (PIRADS 4)?", "context": "form_label"}, "form.biopsy_decision_pirads4.help": {"text": "Visas när ingen ny lesion/progress och delta PSAD < 0.05", "context": "form_help"}, "form.biopsy_decision_pirads4.option_biopsy": {"text": "Biopsi", "context": "decision_option"}, "form.biopsy_decision_pirads4.option_no_biopsy": {"text": "Ej biopsi", "context": "decision_option"}, "form.biopsy_result_primary.label": {"text": "Biopsiresultat (primär biopsi):", "context": "form_label"}, "form.biopsy_result_rebiopsy.label": {"text": "Biopsiresultat (rebiopsi):", "context": "form_label"}, "form.biopsy_result_systematic_previous.label": {"text": "Biopsiresultat (systematiska biopsier, tidigare biopsi):", "context": "form_label"}, "status.cancer.label": {"text": "Cancer", "context": "status_label"}, "status.benign.label": {"text": "Benign", "context": "status_label"}, "result.new_lesion_pirads3.label": {"text": "Ny lesion (PIRADS 3):", "context": "result_label"}, "result.known_lesion_progress_pirads3.label": {"text": "Progress av känd lesion (PIRADS 3):", "context": "result_label"}, "result.new_lesion_or_progress_pirads4.label": {"text": "Ny lesion/progress (PIRADS 4):", "context": "result_label"}, "result.biopsy_decision_pirads4.label": {"text": "Ställningstagande biopsi (PIRADS 4):", "context": "result_label"}, "result.biopsy_result.label": {"text": "Biopsiresultat:", "context": "result_label"}, "result.rebiopsy_result.label": {"text": "Rebiopsiresultat:", "context": "result_label"}, "result.biopsy_result_after_urolog.label": {"text": "Biopsiresultat (efter urolog):", "context": "result_label"}}};
+        const recommendationRules = recommendationTexts.__rules__ || {};
+        const uiClinicalTexts = recommendationTexts.__ui_clinical_texts__ || {};
+        const hasRecommendationRules = Object.keys(recommendationRules).length > 0;
+        const hasUiClinicalTexts = Object.keys(uiClinicalTexts).length > 0;
+        const severityColorMap = {
+            info: '#5cb85c',
+            action: '#d9534f',
+            warning: '#9933cc',
+            critical: '#d9534f',
+        };
 
         function escapeHtml(text) {
             return String(text ?? '')
                 .replace(/&/g, '&amp;')
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;');
+        }
+
+        function getRecommendationRule(context, conditionKey) {
+            return recommendationRules?.[context]?.[conditionKey] || null;
+        }
+
+        function getClinicalText(context, conditionKey, fallbackText) {
+            const rule = getRecommendationRule(context, conditionKey);
+            if (rule?.text) {
+                return rule.text;
+            }
+            if (!hasRecommendationRules) {
+                return fallbackText;
+            }
+            return `Tekniskt fel: saknar textregel (${context}/${conditionKey})`;
+        }
+
+        function getUiClinicalText(uiKey, fallbackText) {
+            const entry = uiClinicalTexts?.[uiKey];
+            if (entry?.text) {
+                return entry.text;
+            }
+            if (typeof entry === 'string' && entry) {
+                return entry;
+            }
+            if (!hasUiClinicalTexts) {
+                return fallbackText;
+            }
+            return `Tekniskt fel: saknar UI-text (${uiKey})`;
+        }
+
+        function applyUiClinicalTexts() {
+            document.querySelectorAll('[data-ui-key]').forEach((element) => {
+                const uiKey = element.getAttribute('data-ui-key');
+                const fallbackText = element.getAttribute('data-fallback') ?? element.textContent ?? '';
+                element.textContent = getUiClinicalText(uiKey, fallbackText);
+            });
+        }
+
+        applyUiClinicalTexts();
+
+        function getClinicalStyleColor(context, conditionKey, fallbackColor) {
+            const rule = getRecommendationRule(context, conditionKey);
+            if (!rule?.severity) {
+                return fallbackColor;
+            }
+            return severityColorMap[rule.severity] || fallbackColor;
         }
 
         async function renderDiagram() {
@@ -457,13 +515,16 @@
         function sanitizeNodeName(name) {
             // Enkel, stabil sanitering i linje med tidigare fungerande version
             return String(name ?? '')
+                .replace(/[\r\n]+/g, ' ')
                 .replace(/"/g, '')
                 .replaceAll('≤', '<=')
                 .replaceAll('≥', '>=')
                 .replace(/[(]/g, ' ')
                 .replace(/[)]/g, '')
+                .replace(/[{}]/g, ' ')
                 .replaceAll('[', ' ')
                 .replaceAll(']', '')
+                .replace(/\|/g, '/')
                 .replace(/</g, ' <= ')
                 .replace(/>/g, ' >= ')
                 .replace(/:/g, ' -')
@@ -478,30 +539,8 @@
             const activeEdgeIndices = [];
             let edgeIndex = 0;
 
-            const visualNodes = {
-                PIRADS_PreviousBiopsy_12: { id: 'PIRADS_PreviousBiopsy_12', name: 'PIRADS 1-2', type: 'process' },
-                PIRADS_PreviousBiopsy_3: { id: 'PIRADS_PreviousBiopsy_3', name: 'PIRADS 3', type: 'process' },
-                PIRADS_PreviousBiopsy_4: { id: 'PIRADS_PreviousBiopsy_4', name: 'PIRADS 4', type: 'process' },
-                PIRADS_PreviousBiopsy_5: { id: 'PIRADS_PreviousBiopsy_5', name: 'PIRADS 5', type: 'process' },
-                UrologNewPSA: { id: 'UrologNewPSA', name: 'Nytt PSA vid urolog / nytt PSAD', type: 'decision' },
-                SystematicBiopsiesPrevious: { id: 'SystematicBiopsiesPrevious', name: 'Systematiska biopsier', type: 'process' },
-                NewLesionPIRADS3: { id: 'NewLesionPIRADS3', name: 'Ny lesion?', type: 'decision' },
-                KnownLesionProgressPIRADS3: { id: 'KnownLesionProgressPIRADS3', name: 'Progress av känd lesion?', type: 'decision' },
-                NewLesionOrProgressPIRADS4: { id: 'NewLesionOrProgressPIRADS4', name: 'Ny lesion/progress PIRADS 4?', type: 'decision' },
-                BiopsyDecisionPIRADS4: { id: 'BiopsyDecisionPIRADS4', name: 'Ställningstagande biopsi', type: 'decision' },
-                BiopsyTargeted_Previous: { id: 'BiopsyTargeted_Previous', name: 'Riktade biopsier (tidigare biopsi)', type: 'process' },
-                BiopsySystematic_Previous: { id: 'BiopsySystematic_Previous', name: 'Riktade + ev perilesionella/systematiska (tidigare biopsi)', type: 'process' }
-            };
-            const mergedNodes = { ...workflowData.nodes, ...visualNodes };
-
             // Lägg till alla noder
-            for (const [nodeId, node] of Object.entries(mergedNodes)) {
-                if (nodeId === 'DecideSystematicBiopsyPrevious') {
-                    continue;
-                }
-                if (nodeId === 'DecideBiopsyAfterBenignPAD') {
-                    continue;
-                }
+            for (const [nodeId, node] of Object.entries(workflowData.nodes)) {
                 const name = sanitizeNodeName(node.name);
                 if (node.type === 'start' || node.type === 'end') {
                     code += `  ${nodeId}([${name}])\n`;
@@ -514,81 +553,7 @@
 
             code += '\n';
 
-            const mermaidEdges = workflowData.edges
-                .filter(edge => !(
-                    (
-                        edge.from === 'DecideMRPreviousBiopsy' &&
-                        edge.to === 'Urologist' &&
-                        ['PIRADS 1-2', 'PIRADS 3', 'PIRADS 4', 'PIRADS 5'].includes(edge.label)
-                    ) ||
-                    (
-                        edge.from === 'UrologNewPSA' &&
-                        ['SystematicBiopsiesPrevious', 'LoopOffer2yr'].includes(edge.to)
-                    ) ||
-                    (
-                        edge.from === 'SystematicBiopsiesPrevious' &&
-                        edge.to === 'DecideSystematicBiopsyPrevious'
-                    ) ||
-                    (
-                        edge.from === 'DecideSystematicBiopsyPrevious'
-                    ) ||
-                    (
-                        edge.from === 'BiopsyAfterBenignPAD' &&
-                        edge.to === 'DecideBiopsyAfterBenignPAD'
-                    ) ||
-                    (
-                        edge.from === 'RebiopsyTargeted' &&
-                        edge.to === 'DecideBiopsyAfterBenignPAD'
-                    ) ||
-                    (
-                        edge.from === 'DecideBiopsyAfterBenignPAD'
-                    )
-                ))
-                .map(edge => ({ ...edge }));
-
-            mermaidEdges.push(
-                { from: 'DecideMRPreviousBiopsy', to: 'PIRADS_PreviousBiopsy_12', label: 'PIRADS 1-2' },
-                { from: 'DecideMRPreviousBiopsy', to: 'PIRADS_PreviousBiopsy_3', label: 'PIRADS 3' },
-                { from: 'DecideMRPreviousBiopsy', to: 'PIRADS_PreviousBiopsy_4', label: 'PIRADS 4' },
-                { from: 'DecideMRPreviousBiopsy', to: 'PIRADS_PreviousBiopsy_5', label: 'PIRADS 5' },
-                { from: 'PIRADS_PreviousBiopsy_12', to: 'LoopOffer2yr', label: 'Nytt PSAD <= 0.2 eller deltaPSAD <= 0.05' },
-                { from: 'PIRADS_PreviousBiopsy_12', to: 'Urologist', label: 'Nytt PSAD > 0.2 och deltaPSAD > 0.05' },
-                { from: 'PIRADS_PreviousBiopsy_3', to: 'LoopOffer2yr', label: 'Ny PSAD < 0.1' },
-                { from: 'PIRADS_PreviousBiopsy_3', to: 'NewLesionPIRADS3', label: 'Ny PSAD > 0.1' },
-                { from: 'NewLesionPIRADS3', to: 'Urologist', label: 'Ja' },
-                { from: 'NewLesionPIRADS3', to: 'KnownLesionProgressPIRADS3', label: 'Nej' },
-                { from: 'KnownLesionProgressPIRADS3', to: 'Urologist', label: 'Ja' },
-                { from: 'KnownLesionProgressPIRADS3', to: 'LoopOffer2yr', label: 'Nej och deltaPSAD < 0.05' },
-                { from: 'KnownLesionProgressPIRADS3', to: 'Urologist', label: 'Nej och deltaPSAD >= 0.05' },
-                { from: 'PIRADS_PreviousBiopsy_4', to: 'Urologist', label: '' },
-                { from: 'PIRADS_PreviousBiopsy_5', to: 'Urologist', label: '' },
-                { from: 'Urologist', to: 'UrologNewPSA', label: 'Ta nytt PSA' },
-                { from: 'UrologNewPSA', to: 'SystematicBiopsiesPrevious', label: 'PIRADS 1-2 och Nytt PSAD > 0.2 och deltaPSAD > 0.05' },
-                { from: 'UrologNewPSA', to: 'LoopOffer2yr', label: 'PIRADS 1-2 och Nytt PSAD <= 0.2 eller deltaPSAD <= 0.05' },
-                { from: 'SystematicBiopsiesPrevious', to: 'LoopOffer2yr', label: 'Benign' },
-                { from: 'SystematicBiopsiesPrevious', to: 'Exit', label: 'Cancer' },
-                { from: 'BiopsyAfterBenignPAD', to: 'LoopOffer2yr', label: 'Benign' },
-                { from: 'BiopsyAfterBenignPAD', to: 'Exit', label: 'Cancer' },
-                { from: 'RebiopsyTargeted', to: 'LoopOffer2yr', label: 'Benign' },
-                { from: 'RebiopsyTargeted', to: 'Exit', label: 'Cancer' },
-                { from: 'UrologNewPSA', to: 'NewLesionOrProgressPIRADS4', label: 'PIRADS 4' },
-                { from: 'NewLesionOrProgressPIRADS4', to: 'BiopsySystematic_Previous', label: 'Ja (ny lesion/progress)' },
-                { from: 'NewLesionOrProgressPIRADS4', to: 'BiopsyDecisionPIRADS4', label: 'Nej och deltaPSAD < 0.05' },
-                { from: 'NewLesionOrProgressPIRADS4', to: 'BiopsySystematic_Previous', label: 'Nej och deltaPSAD >= 0.05' },
-                { from: 'BiopsyDecisionPIRADS4', to: 'BiopsySystematic_Previous', label: 'Biopsi' },
-                { from: 'BiopsyDecisionPIRADS4', to: 'LoopOffer2yr', label: 'Ej biopsi' },
-                { from: 'UrologNewPSA', to: 'BiopsyTargeted_Previous', label: 'PIRADS 3 och PSA-D 0.1-0.199' },
-                { from: 'UrologNewPSA', to: 'BiopsySystematic_Previous', label: 'PIRADS 3 och PSA-D >= 0.2' },
-                { from: 'UrologNewPSA', to: 'LoopOffer2yr', label: 'PIRADS 3 och PSA-D < 0.1' },
-                { from: 'UrologNewPSA', to: 'BiopsySystematic_Previous', label: 'PIRADS 5' },
-                { from: 'BiopsyTargeted_Previous', to: 'Exit', label: 'Cancer' },
-                { from: 'BiopsyTargeted_Previous', to: 'LoopOffer2yr', label: 'Benign' },
-                { from: 'BiopsySystematic_Previous', to: 'Exit', label: 'Cancer' },
-                { from: 'BiopsySystematic_Previous', to: 'LoopOffer2yr', label: 'PIRADS 3 och Benign' },
-                { from: 'BiopsySystematic_Previous', to: 'ExitBenignPIRADS5', label: 'PIRADS 5 och Benign' }
-            );
-
-            for (const edge of mermaidEdges) {
+            for (const edge of workflowData.edges) {
                 const fromIndex = activeNodes.indexOf(edge.from);
                 const toIndex = activeNodes.indexOf(edge.to);
                 if (fromIndex !== -1 && toIndex !== -1 && toIndex === fromIndex + 1) {
@@ -609,13 +574,7 @@
             code += '  classDef inactive fill:#f2f2f2,stroke:#b8b8b8,color:#555\n';
             code += '  classDef exitActive fill:#ffcccc,stroke:#ff0000,stroke-width:2px\n';
 
-            for (const nodeId of Object.keys(mergedNodes)) {
-                if (nodeId === 'DecideSystematicBiopsyPrevious') {
-                    continue;
-                }
-                if (nodeId === 'DecideBiopsyAfterBenignPAD') {
-                    continue;
-                }
+            for (const nodeId of Object.keys(workflowData.nodes)) {
                 if (nodeId === 'Exit') {
                     code += activeNodes.includes(nodeId)
                         ? `  class ${nodeId} exitActive\n`
@@ -1060,7 +1019,12 @@
             // 0e.1 Aktuellt PSA-värde före ny MR-sektion (tidigare biopserad gren)
             if (previousBiopsyOPT === 'yes' && !isNaN(psa) && psa >= 3) {
                 resultHTML += `<strong>Aktuellt PSA-värde (via OPT):</strong> ${psa.toFixed(1)} ng/mL<br>`;
-                resultHTML += `<strong>PSA-klassificering:</strong> PSA ≥ 3 → MR-undersökning<br>`;
+                const prevPsaClassification = getClinicalText(
+                    'psa_classification',
+                    'psa_ge_3',
+                    'PSA ≥ 3 → MR-undersökning'
+                );
+                resultHTML += `<strong>PSA-klassificering:</strong> ${prevPsaClassification}<br>`;
             }
 
             // 0e. Ny MR-resultat (om PSA >= 3)
@@ -1073,16 +1037,22 @@
                 resultHTML += `<strong>Ny MR-resultat:</strong> PIRADS ${newMRPIRADSPreviousBiopsy}<br>`;
             }
             if (previousBiopsyOPT === 'yes' && newMRPIRADSPreviousBiopsy === '3' && newLesionPIRADS3) {
-                resultHTML += `<strong>Ny lesion (PIRADS 3):</strong> ${newLesionPIRADS3 === 'yes' ? 'Ja' : 'Nej'}<br>`;
+                const label = getUiClinicalText('result.new_lesion_pirads3.label', 'Ny lesion (PIRADS 3):');
+                resultHTML += `<strong>${label}</strong> ${newLesionPIRADS3 === 'yes' ? 'Ja' : 'Nej'}<br>`;
             }
             if (previousBiopsyOPT === 'yes' && newMRPIRADSPreviousBiopsy === '3' && newLesionPIRADS3 === 'no' && knownLesionProgressPIRADS3) {
-                resultHTML += `<strong>Progress av känd lesion (PIRADS 3):</strong> ${knownLesionProgressPIRADS3 === 'yes' ? 'Ja' : 'Nej'}<br>`;
+                const label = getUiClinicalText('result.known_lesion_progress_pirads3.label', 'Progress av känd lesion (PIRADS 3):');
+                resultHTML += `<strong>${label}</strong> ${knownLesionProgressPIRADS3 === 'yes' ? 'Ja' : 'Nej'}<br>`;
             }
             if (previousBiopsyOPT === 'yes' && newMRPIRADSPreviousBiopsy === '4' && newLesionOrProgressPIRADS4) {
-                resultHTML += `<strong>Ny lesion/progress (PIRADS 4):</strong> ${newLesionOrProgressPIRADS4 === 'yes' ? 'Ja' : 'Nej'}<br>`;
+                const label = getUiClinicalText('result.new_lesion_or_progress_pirads4.label', 'Ny lesion/progress (PIRADS 4):');
+                resultHTML += `<strong>${label}</strong> ${newLesionOrProgressPIRADS4 === 'yes' ? 'Ja' : 'Nej'}<br>`;
             }
             if (previousBiopsyOPT === 'yes' && newMRPIRADSPreviousBiopsy === '4' && biopsyDecisionPIRADS4) {
-                resultHTML += `<strong>Ställningstagande biopsi (PIRADS 4):</strong> ${biopsyDecisionPIRADS4 === 'yes' ? 'Biopsi' : 'Ej biopsi'}<br>`;
+                const label = getUiClinicalText('result.biopsy_decision_pirads4.label', 'Ställningstagande biopsi (PIRADS 4):');
+                const yesText = getUiClinicalText('form.biopsy_decision_pirads4.option_biopsy', 'Biopsi');
+                const noText = getUiClinicalText('form.biopsy_decision_pirads4.option_no_biopsy', 'Ej biopsi');
+                resultHTML += `<strong>${label}</strong> ${biopsyDecisionPIRADS4 === 'yes' ? yesText : noText}<br>`;
             }
 
             // 0f. Prostatastorlek vid ny MR (tidigare biopserad gren)
@@ -1131,42 +1101,78 @@
 
                         if (newMRPIRADSPreviousBiopsy === '3') {
                             if (psadAtUrolog >= 0.1 && psadAtUrolog < 0.2) {
-                                resultHTML += `<strong style="color: #d9534f;">PIRADS 3 vid urolog: PSA-D 0.1-0.199 → Riktade biopsier</strong><br>`;
+                                const conditionKey = 'urolog_pirads3_psad_0.1_0.199';
+                                const text = getClinicalText('urolog_decision', conditionKey, 'PIRADS 3 vid urolog: PSA-D 0.1-0.199 → Riktade biopsier');
+                                const color = getClinicalStyleColor('urolog_decision', conditionKey, '#d9534f');
+                                resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                             } else if (psadAtUrolog >= 0.2) {
-                                resultHTML += `<strong style="color: #d9534f;">PIRADS 3, Delta PSAD >= 0.05 -> Riktade + systematiska biopsier</strong><br>`;
+                                const conditionKey = 'urolog_pirads3_psad_ge_0.2';
+                                const text = getClinicalText('urolog_decision', conditionKey, 'PIRADS 3, Delta PSAD >= 0.05 -> Riktade + systematiska biopsier');
+                                const color = getClinicalStyleColor('urolog_decision', conditionKey, '#d9534f');
+                                resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                             } else {
-                                resultHTML += `<strong style="color: #5cb85c;">PIRADS 3 vid urolog: PSA-D < 0.1 → Nytt PSA om 2 år</strong><br>`;
+                                const conditionKey = 'urolog_pirads3_psad_lt_0.1';
+                                const text = getClinicalText('urolog_decision', conditionKey, 'PIRADS 3 vid urolog: PSA-D < 0.1 → Nytt PSA om 2 år');
+                                const color = getClinicalStyleColor('urolog_decision', conditionKey, '#5cb85c');
+                                resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                             }
                         } else if (newMRPIRADSPreviousBiopsy === '4') {
                             if (newLesionOrProgressPIRADS4 === 'yes') {
-                                resultHTML += `<strong style="color: #d9534f;">PIRADS 4 vid urolog: Ny lesion/progress → Riktade + systematiska biopsier</strong><br>`;
+                                const conditionKey = 'urolog_pirads4_new_lesion_progress';
+                                const text = getClinicalText('urolog_decision', conditionKey, 'PIRADS 4 vid urolog: Ny lesion/progress → Riktade + systematiska biopsier');
+                                const color = getClinicalStyleColor('urolog_decision', conditionKey, '#d9534f');
+                                resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                             } else if (newLesionOrProgressPIRADS4 === 'no') {
                                 if (deltaAtUrolog < 0.05) {
                                     if (biopsyDecisionPIRADS4 === 'yes') {
-                                        resultHTML += `<strong style="color: #d9534f;">PIRADS 4 vid urolog: deltaPSAD < 0.05 och biopsibeslut = Ja → Riktade + systematiska biopsier</strong><br>`;
+                                        const conditionKey = 'urolog_pirads4_delta_lt_0.05_biopsy_yes';
+                                        const text = getClinicalText('urolog_decision', conditionKey, 'PIRADS 4 vid urolog: deltaPSAD < 0.05 och biopsibeslut = Ja → Riktade + systematiska biopsier');
+                                        const color = getClinicalStyleColor('urolog_decision', conditionKey, '#d9534f');
+                                        resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                                     } else if (biopsyDecisionPIRADS4 === 'no') {
-                                        resultHTML += `<strong style="color: #5cb85c;">PIRADS 4 vid urolog: deltaPSAD < 0.05 och biopsibeslut = Nej → Nytt PSA om 2 år</strong><br>`;
+                                        const conditionKey = 'urolog_pirads4_delta_lt_0.05_biopsy_no';
+                                        const text = getClinicalText('urolog_decision', conditionKey, 'PIRADS 4 vid urolog: deltaPSAD < 0.05 och biopsibeslut = Nej → Nytt PSA om 2 år');
+                                        const color = getClinicalStyleColor('urolog_decision', conditionKey, '#5cb85c');
+                                        resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                                     } else {
-                                        resultHTML += `<strong style="color: #9933cc;">PIRADS 4 vid urolog: deltaPSAD < 0.05 → Ställningstagande biopsi krävs</strong><br>`;
+                                        const conditionKey = 'urolog_pirads4_delta_lt_0.05_decision_required';
+                                        const text = getClinicalText('urolog_decision', conditionKey, 'PIRADS 4 vid urolog: deltaPSAD < 0.05 → Ställningstagande biopsi krävs');
+                                        const color = getClinicalStyleColor('urolog_decision', conditionKey, '#9933cc');
+                                        resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                                     }
                                 } else {
-                                    resultHTML += `<strong style="color: #d9534f;">PIRADS 4 vid urolog: deltaPSAD ≥ 0.05 → Riktade + systematiska biopsier</strong><br>`;
+                                    const conditionKey = 'urolog_pirads4_delta_ge_0.05';
+                                    const text = getClinicalText('urolog_decision', conditionKey, 'PIRADS 4 vid urolog: deltaPSAD ≥ 0.05 → Riktade + systematiska biopsier');
+                                    const color = getClinicalStyleColor('urolog_decision', conditionKey, '#d9534f');
+                                    resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                                 }
                             }
                         } else if (newMRPIRADSPreviousBiopsy === '5') {
-                            resultHTML += `<strong style="color: #d9534f;">PIRADS 5 vid urolog: Riktade + systematiska biopsier</strong><br>`;
+                            const conditionKey = 'urolog_pirads5_biopsy';
+                            const text = getClinicalText('urolog_decision', conditionKey, 'PIRADS 5 vid urolog: Riktade + systematiska biopsier');
+                            const color = getClinicalStyleColor('urolog_decision', conditionKey, '#d9534f');
+                            resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                         } else {
                             const criteriaMetAtUrolog = psadAtUrolog > 0.2 && deltaAtUrolog > 0.05;
                             if (criteriaMetAtUrolog) {
-                                resultHTML += `<strong style="color: #d9534f;">PSAD vid urolog uppfyller kriterier (PSAD > 0.2 och deltaPSAD > 0.05) → Systematiska biopsier</strong><br>`;
+                                const conditionKey = 'urolog_psad_criteria_met';
+                                const text = getClinicalText('urolog_decision', conditionKey, 'PSAD vid urolog uppfyller kriterier (PSAD > 0.2 och deltaPSAD > 0.05) → Systematiska biopsier');
+                                const color = getClinicalStyleColor('urolog_decision', conditionKey, '#d9534f');
+                                resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                             } else {
-                                resultHTML += `<strong style="color: #5cb85c;">PSAD vid urolog uppfyller ej kriterier (PSAD > 0.2 och deltaPSAD > 0.05) → Ingen systematisk biopsi i detta steg</strong><br>`;
+                                const conditionKey = 'urolog_psad_criteria_not_met';
+                                const text = getClinicalText('urolog_decision', conditionKey, 'PSAD vid urolog uppfyller ej kriterier (PSAD > 0.2 och deltaPSAD > 0.05) → Ingen systematisk biopsi i detta steg');
+                                const color = getClinicalStyleColor('urolog_decision', conditionKey, '#5cb85c');
+                                resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                             }
                         }
                     }
                 }
             } else if (urologNeeded && isNaN(psaAtUrolog)) {
-                resultHTML += `<strong style="color: #9933cc;">Ange nytt PSA vid urolog för fortsatt bedömning</strong><br>`;
+                const conditionKey = 'urolog_enter_new_psa';
+                const text = getClinicalText('urolog_decision', conditionKey, 'Ange nytt PSA vid urolog för fortsatt bedömning');
+                const color = getClinicalStyleColor('urolog_decision', conditionKey, '#9933cc');
+                resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
             }
             
             // 1. PSA-klassificering (Aktuellt PSA-värde tagit via OPT)
@@ -1175,11 +1181,11 @@
                     resultHTML += `<strong>Aktuellt PSA-värde (via OPT):</strong> ${psa.toFixed(1)} ng/mL<br>`;
                     let classification = '';
                     if (psa < 1) {
-                        classification = 'PSA < 1 → Nytt PSA om 6 år';
+                        classification = getClinicalText('psa_classification', 'psa_lt_1', 'PSA < 1 → Nytt PSA om 6 år');
                     } else if (psa < 3) {
-                        classification = '1 ≤ PSA < 3 → Nytt PSA om 2 år';
+                        classification = getClinicalText('psa_classification', 'psa_1_to_lt_3', '1 ≤ PSA < 3 → Nytt PSA om 2 år');
                     } else {
-                        classification = 'PSA ≥ 3 → MR-undersökning';
+                        classification = getClinicalText('psa_classification', 'psa_ge_3', 'PSA ≥ 3 → MR-undersökning');
                     }
                     resultHTML += `<strong>PSA-klassificering:</strong> ${classification}<br>`;
                 }
@@ -1201,33 +1207,37 @@
                 if (pirads === '1-2' && !isNaN(psa) && !isNaN(prostate) && prostate > 0) {
                     const psad = psa / prostate;
                     if (psad < 0.2) {
-                        rec += ' → PSA om 2 år';
+                        rec += ` → ${getClinicalText('pirads_decision', 'pirads_1_2_psad_lt_0.2', 'PSA om 2 år')}`;
                     } else if (isNaN(psaBeforeBiopsy)) {
-                        rec += ' → Ange nytt PSA före beslut';
+                        rec += ` → ${getClinicalText('pirads_decision', 'pirads_1_2_enter_psa_before_decision', 'Ange nytt PSA före beslut')}`;
                     } else {
                         const psadBeforeBiopsy = psaBeforeBiopsy / prostate;
-                        rec += psadBeforeBiopsy >= 0.2 ? ' → Biopsi' : ' → PSA om 2 år';
+                        if (psadBeforeBiopsy >= 0.2) {
+                            rec += ` → ${getClinicalText('pirads_decision', 'pirads_1_2_psad_before_ge_0.2', 'Biopsi')}`;
+                        } else {
+                            rec += ` → ${getClinicalText('pirads_decision', 'pirads_1_2_psad_before_lt_0.2', 'PSA om 2 år')}`;
+                        }
                     }
                 } else if (pirads === '3' && !isNaN(psa) && !isNaN(prostate) && prostate > 0) {
                     const psad = psa / prostate;
                     if (psad < 0.1) {
-                        rec += ' → PSA om 2 år';
+                        rec += ` → ${getClinicalText('pirads_decision', 'pirads_3_psad_lt_0.1', 'PSA om 2 år')}`;
                     } else if (isNaN(psaBeforeBiopsy)) {
-                        rec += ' → Ange nytt PSA före beslut';
+                        rec += ` → ${getClinicalText('pirads_decision', 'pirads_3_enter_psa_before_decision', 'Ange nytt PSA före beslut')}`;
                     } else {
                         const psadBeforeBiopsy = psaBeforeBiopsy / prostate;
                         if (psadBeforeBiopsy < 0.1) {
-                            rec += ' → PSA om 2 år';
+                            rec += ` → ${getClinicalText('pirads_decision', 'pirads_3_psad_before_lt_0.1', 'PSA om 2 år')}`;
                         } else if (psadBeforeBiopsy < 0.2) {
-                            rec += ' → Riktade biopsier';
+                            rec += ` → ${getClinicalText('pirads_decision', 'pirads_3_psad_before_0.1_0.199', 'Riktade biopsier')}`;
                         } else {
-                            rec += ' → Riktade + systematiska biopsier';
+                            rec += ` → ${getClinicalText('pirads_decision', 'pirads_3_psad_before_ge_0.2', 'Riktade + systematiska biopsier')}`;
                         }
                     }
                 } else if (pirads === '4') {
-                    rec += ' → Biopsi';
+                    rec += ` → ${getClinicalText('pirads_decision', 'pirads_4_biopsy', 'Biopsi')}`;
                 } else if (pirads === '5') {
-                    rec += ' → Biopsi';
+                    rec += ` → ${getClinicalText('pirads_decision', 'pirads_5_biopsy', 'Biopsi')}`;
                 }
                 resultHTML += `<strong>PIRADS:</strong> ${rec}<br>`;
             }
@@ -1242,9 +1252,12 @@
             // 5. Biopsiresultat (om valt)
             const biopsyResult = document.querySelector('input[name="biopsyResult"]:checked')?.value || '';
             if (biopsyResult) {
-                const resultText = biopsyResult === 'cancer' ? 'Cancer' : 'Benign';
+                const resultText = biopsyResult === 'cancer'
+                    ? getUiClinicalText('status.cancer.label', 'Cancer')
+                    : getUiClinicalText('status.benign.label', 'Benign');
                 const resultColor = biopsyResult === 'cancer' ? '#d9534f' : '#5cb85c';
-                resultHTML += `<strong>Biopsiresultat:</strong> <span style="color: ${resultColor};">${resultText}</span><br>`;
+                const label = getUiClinicalText('result.biopsy_result.label', 'Biopsiresultat:');
+                resultHTML += `<strong>${label}</strong> <span style="color: ${resultColor};">${resultText}</span><br>`;
             }
 
             // 6. PSA och PSAD efter 3 månader (om benign biopsi)
@@ -1255,29 +1268,44 @@
                 
                 if (parseFloat(psadAfter3Months) >= 0.3) {
                     if (pirads === '1-2') {
-                        resultHTML += `<strong style="color: #d9534f;">PSAD ≥ 0.3 → Systematiska biopsier krävs</strong><br>`;
+                        const conditionKey = 'psad_followup_ge_0.3_pirads_1_2';
+                        const text = getClinicalText('psad_followup', conditionKey, 'PSAD ≥ 0.3 → Systematiska biopsier krävs');
+                        const color = getClinicalStyleColor('psad_followup', conditionKey, '#d9534f');
+                        resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                     } else if (pirads === '3' || pirads === '4') {
-                        resultHTML += `<strong style="color: #d9534f;">PSAD ≥ 0.3 → Riktade + ev systematiska biopsier krävs</strong><br>`;
+                        const conditionKey = 'psad_followup_ge_0.3_pirads_3_4';
+                        const text = getClinicalText('psad_followup', conditionKey, 'PSAD ≥ 0.3 → Riktade + ev systematiska biopsier krävs');
+                        const color = getClinicalStyleColor('psad_followup', conditionKey, '#d9534f');
+                        resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                     }
                 } else {
-                    resultHTML += `<strong style="color: #5cb85c;">PSAD < 0.3 → PSA-kontroll om 2 år</strong><br>`;
+                    const conditionKey = 'psad_followup_lt_0.3';
+                    const text = getClinicalText('psad_followup', conditionKey, 'PSAD < 0.3 → PSA-kontroll om 2 år');
+                    const color = getClinicalStyleColor('psad_followup', conditionKey, '#5cb85c');
+                    resultHTML += `<strong style="color: ${color};">${text}</strong><br>`;
                 }
             }
 
             // 7. Rebiopsiresultat (om valt)
             const rebiopsyResult = document.querySelector('input[name="rebiopsyResult"]:checked')?.value || '';
             if (rebiopsyResult) {
-                const resultText = rebiopsyResult === 'cancer' ? 'Cancer' : 'Benign';
+                const resultText = rebiopsyResult === 'cancer'
+                    ? getUiClinicalText('status.cancer.label', 'Cancer')
+                    : getUiClinicalText('status.benign.label', 'Benign');
                 const resultColor = rebiopsyResult === 'cancer' ? '#d9534f' : '#5cb85c';
-                resultHTML += `<strong>Rebiopsiresultat:</strong> <span style="color: ${resultColor};">${resultText}</span><br>`;
+                const label = getUiClinicalText('result.rebiopsy_result.label', 'Rebiopsiresultat:');
+                resultHTML += `<strong>${label}</strong> <span style="color: ${resultColor};">${resultText}</span><br>`;
             }
 
             // 7b. Biopsiresultat efter systematiska biopsier (tidigare biopserad gren)
             const systematicBiopsyPreviousResult = document.querySelector('input[name="systematicBiopsyPreviousResult"]:checked')?.value || '';
             if (systematicBiopsyPreviousResult) {
-                const resultText = systematicBiopsyPreviousResult === 'cancer' ? 'Cancer' : 'Benign';
+                const resultText = systematicBiopsyPreviousResult === 'cancer'
+                    ? getUiClinicalText('status.cancer.label', 'Cancer')
+                    : getUiClinicalText('status.benign.label', 'Benign');
                 const resultColor = systematicBiopsyPreviousResult === 'cancer' ? '#d9534f' : '#5cb85c';
-                resultHTML += `<strong>Biopsiresultat (efter urolog):</strong> <span style="color: ${resultColor};">${resultText}</span><br>`;
+                const label = getUiClinicalText('result.biopsy_result_after_urolog.label', 'Biopsiresultat (efter urolog):');
+                resultHTML += `<strong>${label}</strong> <span style="color: ${resultColor};">${resultText}</span><br>`;
             }
 
             // 8. Slutlig rekommendation baserad på det aktiva flödet
@@ -1285,33 +1313,38 @@
             if (activePath.length > 0) {
                 const lastNode = activePath[activePath.length - 1];
                 let recommendation = '';
-                
-                if (lastNode === 'LoopOffer2yr') {
-                    recommendation = '<strong style="color: #0066cc;">📅 Rekommendation: Nytt PSA om 2 år</strong>';
-                } else if (lastNode === 'LoopOffer6yr') {
-                    recommendation = '<strong style="color: #0066cc;">📅 Rekommendation: Nytt PSA om 6 år</strong>';
-                } else if (lastNode === 'Exit') {
-                    recommendation = '<strong style="color: #d9534f;">⛔ Rekommendation: Cancer - Avsluta OPT</strong>';
-                } else if (lastNode === 'ExitBenignPIRADS5') {
-                    recommendation = '<strong style="color: #ff6600;">⚠️ Rekommendation: PIRADS 5 Benign - Avsluta OPT</strong>';
-                } else if (lastNode === 'Urologist') {
-                    recommendation = '<strong style="color: #9933cc;">👨‍⚕️ Rekommendation: Remiss till urolog</strong>';
-                } else if (lastNode === 'Biopsy') {
-                    recommendation = '<strong style="color: #d9534f;">🧪 Rekommendation: Biopsi - Systematiska biopsier</strong>';
-                } else if (lastNode === 'BiopsyPIRADS3_Targeted' || lastNode === 'BiopsyTargeted_Previous') {
-                    recommendation = '<strong style="color: #d9534f;">🧪 Rekommendation: Biopsi - Riktade/fusionsbiopsier</strong>';
-                } else if (lastNode === 'BiopsyPIRADS3_Systematic' || lastNode === 'BiopsySystematic_Previous' || lastNode === 'SystematicBiopsiesPrevious') {
-                    recommendation = '<strong style="color: #d9534f;">🧪 Rekommendation: Biopsi - Riktade/fusionsbiopsier + systematiska biopsier</strong>';
-                } else if (lastNode === 'MR' || lastNode === 'DecideMR') {
-                    recommendation = '<strong style="color: #9933cc;">🧭 Rekommendation: Ange PIRADS (MR-svar) för nästa steg</strong>';
-                } else if (lastNode === 'PSABeforeBiopsy' || lastNode === 'DecidePSAD_BeforeBiopsy') {
-                    recommendation = '<strong style="color: #9933cc;">🧭 Rekommendation: Ange nytt PSA innan biopsi</strong>';
-                } else if (lastNode === 'DecideBiopsy') {
-                    recommendation = '<strong style="color: #9933cc;">🧭 Rekommendation: Ange biopsiresultat (Cancer/Benign)</strong>';
-                } else if (lastNode === 'BenignPAD' || lastNode === 'DecidePSAD_BenignPAD_PIRADS14' || lastNode === 'PSA_BenignPAD_3months' || lastNode === 'DecidePSAD_BenignPAD_3months') {
-                    recommendation = '<strong style="color: #0066cc;">📅 Rekommendation: Nytt PSA om 3 månader</strong>';
-                } else if (lastNode === 'RebiopsyTargeted' || lastNode === 'BiopsyAfterBenignPAD' || lastNode === 'DecideBiopsyAfterBenignPAD') {
-                    recommendation = '<strong style="color: #9933cc;">🧭 Rekommendation: Ange rebiopsiresultat (Cancer/Benign)</strong>';
+
+                // Color mapping for node categories (UI styling, not clinical content)
+                const nodeColorMap = {
+                    'LoopOffer2yr': '#0066cc',
+                    'LoopOffer6yr': '#0066cc',
+                    'Exit': '#d9534f',
+                    'ExitBenignPIRADS5': '#ff6600',
+                    'Urologist': '#9933cc',
+                    'Biopsy': '#d9534f',
+                    'BiopsyPIRADS3_Targeted': '#d9534f',
+                    'BiopsyTargeted_Previous': '#d9534f',
+                    'BiopsyPIRADS3_Systematic': '#d9534f',
+                    'BiopsySystematic_Previous': '#d9534f',
+                    'SystematicBiopsiesPrevious': '#d9534f',
+                    'MR': '#9933cc',
+                    'DecideMR': '#9933cc',
+                    'PSABeforeBiopsy': '#9933cc',
+                    'DecidePSAD_BeforeBiopsy': '#9933cc',
+                    'DecideBiopsy': '#9933cc',
+                    'BenignPAD': '#0066cc',
+                    'DecidePSAD_BenignPAD_PIRADS14': '#0066cc',
+                    'PSA_BenignPAD_3months': '#0066cc',
+                    'DecidePSAD_BenignPAD_3months': '#0066cc',
+                    'RebiopsyTargeted': '#9933cc',
+                    'BiopsyAfterBenignPAD': '#9933cc',
+                    'DecideBiopsyAfterBenignPAD': '#9933cc',
+                };
+
+                const recText = recommendationTexts[lastNode];
+                if (recText) {
+                    const color = nodeColorMap[lastNode] || '#333';
+                    recommendation = `<strong style="color: ${color};">${recText}</strong>`;
                 }
                 
                 if (recommendation) {
